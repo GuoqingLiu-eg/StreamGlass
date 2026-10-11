@@ -1,0 +1,23 @@
+{
+  "schema_version": 1,
+  "component": "native_cpp_s0_file_pipeline",
+  "passed": false,
+  "policy_semantic_passed": false,
+  "strict_unit_parity_passed": false,
+  "matching_units": 129,
+  "reference_units": 137,
+  "first_semantic_divergence": "policy 6",
+  "first_strict_unit_divergence": "policy 1 index=24 actual=5320 expected=7104",
+  "translation": "Have you ever considered writing a column of advice?",
+  "input_samples": 63488,
+  "output_samples": 43520,
+  "policies": [
+    {"index": 0, "fbank_frames": 222, "encoder_frames": 14, "text_action": 0, "text_finished": false, "t2u_action": 0, "t2u_finished": false, "emitted_tokens": 0, "emitted_units": 0, "encoder_ms": 97.506816, "decoder_ms": 58.634272, "t2u_ms": 0, "vocoder_ms": 0, "probability_max_abs": 0.001101016998, "matching_units": 0, "reference_units": 0, "semantic_passed": true, "strict_unit_passed": true},
+    {"index": 1, "fbank_frames": 254, "encoder_frames": 16, "text_action": 1, "text_finished": false, "t2u_action": 1, "t2u_finished": false, "emitted_tokens": 4, "emitted_units": 57, "encoder_ms": 26.754112, "decoder_ms": 139.754112, "t2u_ms": 19.211744, "vocoder_ms": 10.341152, "probability_max_abs": 0.1681349277, "matching_units": 56, "reference_units": 57, "semantic_passed": true, "strict_unit_passed": false},
+    {"index": 2, "fbank_frames": 286, "encoder_frames": 18, "text_action": 0, "text_finished": false, "t2u_action": 0, "t2u_finished": false, "emitted_tokens": 0, "emitted_units": 0, "encoder_ms": 25.767424, "decoder_ms": 18.92608, "t2u_ms": 7.80336, "vocoder_ms": 0, "probability_max_abs": 0.06046277285, "matching_units": 0, "reference_units": 0, "semantic_passed": true, "strict_unit_passed": true},
+    {"index": 3, "fbank_frames": 318, "encoder_frames": 20, "text_action": 0, "text_finished": false, "t2u_action": 0, "t2u_finished": false, "emitted_tokens": 0, "emitted_units": 0, "encoder_ms": 25.871296, "decoder_ms": 18.79648, "t2u_ms": 7.780192, "vocoder_ms": 0, "probability_max_abs": 0.03625693917, "matching_units": 0, "reference_units": 0, "semantic_passed": true, "strict_unit_passed": true},
+    {"index": 4, "fbank_frames": 350, "encoder_frames": 22, "text_action": 0, "text_finished": false, "t2u_action": 0, "t2u_finished": false, "emitted_tokens": 0, "emitted_units": 0, "encoder_ms": 26.305472, "decoder_ms": 18.735552, "t2u_ms": 7.816736, "vocoder_ms": 0, "probability_max_abs": 0.3155917972, "matching_units": 0, "reference_units": 0, "semantic_passed": true, "strict_unit_passed": true},
+    {"index": 5, "fbank_frames": 382, "encoder_frames": 24, "text_action": 0, "text_finished": false, "t2u_action": 0, "t2u_finished": false, "emitted_tokens": 0, "emitted_units": 0, "encoder_ms": 26.902496, "decoder_ms": 18.64784, "t2u_ms": 7.799616, "vocoder_ms": 0, "probability_max_abs": 0.001229226589, "matching_units": 0, "reference_units": 0, "semantic_passed": true, "strict_unit_passed": true},
+    {"index": 6, "fbank_frames": 395, "encoder_frames": 25, "text_action": 1, "text_finished": true, "t2u_action": 1, "t2u_finished": true, "emitted_tokens": 7, "emitted_units": 79, "encoder_ms": 27.89424, "decoder_ms": 168.84656, "t2u_ms": 10.586048, "vocoder_ms": 8.832928, "probability_max_abs": 0.2128419578, "matching_units": 73, "reference_units": 80, "semantic_passed": false, "strict_unit_passed": false}
+  ]
+}

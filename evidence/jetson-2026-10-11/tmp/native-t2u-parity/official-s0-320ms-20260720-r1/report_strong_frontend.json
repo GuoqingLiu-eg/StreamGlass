@@ -1,0 +1,14 @@
+{
+  "schema_version": 1,
+  "component": "native_cpp_t2u_official_parity",
+  "call_count": 6,
+  "passed": true,
+  "calls": [
+    {"call_index": 0, "action": "write", "expected_action": 1, "character_count": 26, "total_unit_count": 57, "unit_offset": 0, "unit_count": 57, "next_duration_start_index": 25, "characters_equal": true, "character_lengths_equal": true, "durations_equal": true, "expansion_equal": true, "full_units_equal": true, "policy_units_equal": true, "passed": true},
+    {"call_index": 1, "action": "read", "expected_action": 0, "character_count": 26, "total_unit_count": 57, "unit_offset": 54, "unit_count": 0, "next_duration_start_index": 25, "characters_equal": true, "character_lengths_equal": true, "durations_equal": true, "expansion_equal": true, "full_units_equal": true, "policy_units_equal": true, "passed": true},
+    {"call_index": 2, "action": "read", "expected_action": 0, "character_count": 26, "total_unit_count": 57, "unit_offset": 54, "unit_count": 0, "next_duration_start_index": 25, "characters_equal": true, "character_lengths_equal": true, "durations_equal": true, "expansion_equal": true, "full_units_equal": true, "policy_units_equal": true, "passed": true},
+    {"call_index": 3, "action": "read", "expected_action": 0, "character_count": 26, "total_unit_count": 57, "unit_offset": 54, "unit_count": 0, "next_duration_start_index": 25, "characters_equal": true, "character_lengths_equal": true, "durations_equal": true, "expansion_equal": true, "full_units_equal": true, "policy_units_equal": true, "passed": true},
+    {"call_index": 4, "action": "read", "expected_action": 0, "character_count": 26, "total_unit_count": 57, "unit_offset": 54, "unit_count": 0, "next_duration_start_index": 25, "characters_equal": true, "character_lengths_equal": true, "durations_equal": true, "expansion_equal": true, "full_units_equal": true, "policy_units_equal": true, "passed": true},
+    {"call_index": 5, "action": "write", "expected_action": 1, "character_count": 54, "total_unit_count": 131, "unit_offset": 51, "unit_count": 80, "next_duration_start_index": 53, "characters_equal": true, "character_lengths_equal": true, "durations_equal": true, "expansion_equal": true, "full_units_equal": true, "policy_units_equal": true, "passed": true}
+  ]
+}

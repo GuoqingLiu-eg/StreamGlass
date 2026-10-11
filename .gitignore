@@ -1,0 +1,51 @@
+.cache/
+.pytest_cache/
+__pycache__/
+*.pyc
+*.log
+*.pid
+*.engine
+*.onnx
+*.plan
+*.timing.cache
+artifacts/
+dist/
+engines/
+logs/
+models/*.pt
+models/*.model
+staging/
+
+
+# Local backups and workstation metadata (original snapshot is archived separately).
+.DS_Store
+._*
+.codex-backup*/
+.pre-demo-audit*/
+.sync-inbox/
+*.bak
+*.bak-*
+*.pre-*
+
+# Build outputs and private deployment settings.
+/build/
+/build-*/
+/native-build/
+/native-install/
+/.venv/
+/venv/
+/private-backup/
+/device-config-private/
+/config/platform.lock.json
+/config/platform.local.json
+.env
+*.env
+!*.env.example
+*.key
+*.pem
+
+# Upstream Silero source snapshot includes small, fixed inference fixtures.
+!third_party/silero-vad-v6.2.1/data/*.onnx
+
+# Sanitized deployment examples are intended for version control.
+!/deploy/device-config-example/**/*.env

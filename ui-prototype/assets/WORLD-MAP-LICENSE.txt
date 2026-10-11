@@ -1,0 +1,10 @@
+World map texture source:
+https://commons.wikimedia.org/wiki/File:Equirectangular_projection_world_map_without_borders.svg
+
+Author: Ebrahim
+License: Creative Commons Attribution-ShareAlike 4.0 International
+https://creativecommons.org/licenses/by-sa/4.0/
+
+The source map is derived from Natural Earth public-domain data. This project
+uses a rasterized 1280 x 640 copy as an alpha mask and applies its own colors
+and lighting at runtime.

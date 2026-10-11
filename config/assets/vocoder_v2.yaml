@@ -1,0 +1,2 @@
+name: vocoder_v2@user
+checkpoint: file:///models/vocoder_v2.pt

@@ -1,0 +1,2 @@
+	ref_tgt_text	pred_tgt_audio
+0	This is an official-source audio smoke test.	/output/wavs/0_pred.wav

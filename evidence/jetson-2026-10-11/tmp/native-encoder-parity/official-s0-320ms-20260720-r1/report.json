@@ -1,0 +1,22 @@
+{
+  "component": "native_cpp_encoder_official_parity",
+  "cosine": 0.9999966727434236,
+  "finite": true,
+  "lengths_equal": true,
+  "max_abs": 0.140625,
+  "mean_abs": 0.0015576331643387675,
+  "minimum_cosine": 0.999,
+  "native_seq_lens": [
+    25
+  ],
+  "official_seq_lens": [
+    25
+  ],
+  "passed": true,
+  "schema_version": 1,
+  "shape": [
+    1,
+    25,
+    1024
+  ]
+}

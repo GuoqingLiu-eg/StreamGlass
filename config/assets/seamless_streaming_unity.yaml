@@ -1,0 +1,3 @@
+name: seamless_streaming_unity@user
+checkpoint: file:///models/seamless_streaming_unity.pt
+char_tokenizer: file:///models/spm_char_lang38_tc.model

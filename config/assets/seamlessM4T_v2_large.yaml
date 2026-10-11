@@ -1,0 +1,5 @@
+{
+  "name": "seamlessM4T_v2_large@user",
+  "char_tokenizer": "file:///models/spm_char_lang38_tc.model",
+  "tokenizer": "file:///models/tokenizer.model"
+}

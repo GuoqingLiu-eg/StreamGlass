@@ -1,0 +1,82 @@
+# Copyright (c) Meta Platforms, Inc. and affiliates.
+# All rights reserved.
+#
+# This source code is licensed under the BSD-style license found in the
+# LICENSE file in the root directory of this source tree.
+
+name: Release
+
+run-name: Release (${{ inputs.release_type }})
+
+on:
+  workflow_call:
+    inputs:
+      release_type:
+        type: string
+        required: true
+  workflow_dispatch:
+    inputs:
+      release_type:
+        type: choice
+        required: true
+        options:
+          - 'nightly'
+          - 'rc'
+          - 'stable'
+
+jobs:
+  process_version:
+    name: Process project version
+    outputs:
+      version_override: ${{ steps.stamp_version.outputs.version_override }}
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check-out the repository
+        uses: actions/checkout@v3
+      - name: Validate version
+        env:
+          RELEASE_TYPE: ${{ inputs.release_type }}
+        run: |
+          version=$(cat VERSION)
+
+          if [[ $RELEASE_TYPE != nightly ]]; then
+            if [[ $version == *.dev* ]]; then
+              echo "A PEP 440 version with dev segment cannot be released as '$RELEASE_TYPE'." >&2
+
+              exit 1
+            fi
+          fi
+      - name: Stamp version with current date if nightly
+        id: stamp_version
+        if: inputs.release_type == 'nightly'
+        run: |
+          version=$(cat VERSION)
+
+          # Append datetime-stamped dev segment.
+          echo version_override=${version%.dev*}.dev$(date --utc +%Y%m%d%H%M) >> "$GITHUB_OUTPUT"
+
+  lint:
+    name: Lint
+    uses: ./.github/workflows/_lint.yaml
+
+  build_wheels:
+    name: Build wheels
+    needs: [process_version, lint]
+    uses: ./.github/workflows/_build_wheels.yaml
+    with:
+      release_type: ${{ inputs.release_type }}
+      version_override: ${{ needs.process_version.outputs.version_override }}
+
+  build_doc:
+    name: Build documentation
+    needs: [process_version]
+    uses: ./.github/workflows/_build_doc.yaml
+    with:
+      version_override: ${{ needs.process_version.outputs.version_override }}
+
+  publish:
+    name: Publish
+    needs: [build_wheels, build_doc]
+    uses: ./.github/workflows/_publish.yaml
+    with:
+      release_type: ${{ inputs.release_type }}

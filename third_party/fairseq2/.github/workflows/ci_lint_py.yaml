@@ -1,0 +1,18 @@
+# Copyright (c) Meta Platforms, Inc. and affiliates.
+# All rights reserved.
+#
+# This source code is licensed under the BSD-style license found in the
+# LICENSE file in the root directory of this source tree.
+
+name: CI
+
+on:
+  pull_request:
+    paths:
+      - '**.py'
+      - '**.pyi'
+
+jobs:
+  lint_py:
+    name: Lint Python
+    uses: ./.github/workflows/_lint_py.yaml

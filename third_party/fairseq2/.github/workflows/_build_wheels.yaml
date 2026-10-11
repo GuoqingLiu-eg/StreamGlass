@@ -1,0 +1,134 @@
+# Copyright (c) Meta Platforms, Inc. and affiliates.
+# All rights reserved.
+#
+# This source code is licensed under the BSD-style license found in the
+# LICENSE file in the root directory of this source tree.
+
+on:
+  workflow_call:
+    inputs:
+      release_type:
+        type: string
+        required: true
+      version_override:
+        type: string
+        required: true
+
+jobs:
+  build_pt131_wheel-linux:
+    name: Build wheels (pt${{ matrix.torch }}, py${{ matrix.py }}, linux-x86_64, ${{ matrix.variant }}, ${{ matrix.sanitizers }})
+    uses: ./.github/workflows/_build_wheel-linux.yaml
+    strategy:
+      fail-fast: false
+      matrix:
+        torch: ['1.13.1']
+        py: ['3.8', '3.9', '3.10']
+        variant: ['cpu', 'cu116']
+        sanitizers: ['nosan']
+    with:
+      torch: ${{ matrix.torch }}
+      py: ${{ matrix.py }}
+      variant: ${{ matrix.variant }}
+      sanitizers: ${{ matrix.sanitizers }}
+      version_override: ${{ inputs.version_override }}
+
+  build_pt20_wheel-linux:
+    name: Build wheels (pt${{ matrix.torch }}, py${{ matrix.py }}, linux-x86_64, ${{ matrix.variant }}, ${{ matrix.sanitizers }})
+    uses: ./.github/workflows/_build_wheel-linux.yaml
+    strategy:
+      fail-fast: false
+      matrix:
+        torch: ['2.0.1']
+        py: ['3.8', '3.9', '3.10', '3.11']
+        variant: ['cpu', 'cu117', 'cu118']
+        sanitizers: ['nosan']
+    with:
+      torch: ${{ matrix.torch }}
+      py: ${{ matrix.py }}
+      variant: ${{ matrix.variant }}
+      sanitizers: ${{ matrix.sanitizers }}
+      version_override: ${{ inputs.version_override }}
+
+  build_pt21_wheel-linux:
+    name: Build wheels (pt${{ matrix.torch }}, py${{ matrix.py }}, linux-x86_64, ${{ matrix.variant }}, ${{ matrix.sanitizers }})
+    uses: ./.github/workflows/_build_wheel-linux.yaml
+    strategy:
+      fail-fast: false
+      matrix:
+        torch: ['2.1.0', '2.1.1']
+        py: ['3.8', '3.9', '3.10', '3.11']
+        variant: ['cpu', 'cu118', 'cu121']
+        sanitizers: ['nosan']
+    with:
+      torch: ${{ matrix.torch }}
+      py: ${{ matrix.py }}
+      variant: ${{ matrix.variant }}
+      sanitizers: ${{ matrix.sanitizers }}
+      version_override: ${{ inputs.version_override }}
+
+  build_pt22_wheel-linux:
+    name: Build wheels (pt${{ matrix.torch }}, py${{ matrix.py }}, linux-x86_64, ${{ matrix.variant }}, ${{ matrix.sanitizers }})
+    uses: ./.github/workflows/_build_wheel-linux.yaml
+    strategy:
+      fail-fast: false
+      matrix:
+        torch: ['2.2.0', '2.2.1', '2.2.2']
+        py: ['3.8', '3.9', '3.10', '3.11']
+        variant: ['cpu', 'cu118', 'cu121']
+        sanitizers: ['nosan']
+        include:
+          - run_integration_tests: false
+
+          # Integration Tests
+          - torch: '2.2.2'
+            py: '3.11'
+            variant: 'cpu'
+            sanitizers: 'nosan'
+            run_integration_tests: true
+
+          # ASAN/UBSAN
+          - torch: '2.2.2'
+            py: '3.11'
+            variant: 'cpu'
+            sanitizers: 'asan_ubsan'
+            run_integration_tests: false
+    with:
+      torch: ${{ matrix.torch }}
+      py: ${{ matrix.py }}
+      variant: ${{ matrix.variant }}
+      sanitizers: ${{ matrix.sanitizers }}
+      version_override: ${{ inputs.version_override }}
+      run_integration_tests: ${{ matrix.run_integration_tests }}
+
+  build_pypi_wheel-linux:
+    name: Build wheels for PyPI (pt${{ matrix.torch }}, py${{ matrix.py }}, linux-x86_64, ${{ matrix.variant }})
+    uses: ./.github/workflows/_build_wheel-linux.yaml
+    if: inputs.release_type == 'stable'
+    strategy:
+      fail-fast: false
+      matrix:
+        torch: ['2.2.2']
+        py: ['3.8', '3.9', '3.10', '3.11']
+        variant: ['cu121']
+    with:
+      torch: ${{ matrix.torch }}
+      py: ${{ matrix.py }}
+      variant: ${{ matrix.variant }}
+      artifacts_name: 'pypi'
+      version_override: ${{ inputs.version_override }}
+      label_version_with_variant: false
+
+  build_pypi_wheel-macos:
+    name: Build wheels for PyPI (pt${{ matrix.torch }}, py${{ matrix.py }}, macos-arm64)
+    uses: ./.github/workflows/_build_wheel-macos.yaml
+    if: inputs.release_type == 'stable'
+    strategy:
+      fail-fast: false
+      matrix:
+        torch: ['2.2.2']
+        py: ['3.8', '3.9', '3.10', '3.11']
+    with:
+      torch: ${{ matrix.torch }}
+      py: ${{ matrix.py }}
+      artifacts_name: 'pypi'
+      version_override: ${{ inputs.version_override }}

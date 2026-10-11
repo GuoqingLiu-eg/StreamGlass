@@ -1,0 +1,1413 @@
+{
+  "cases": [
+    {
+      "cache_length_in": 0,
+      "call_index": 0,
+      "decision_probability": 0.40827676653862,
+      "decision_probability_error": 0.0008060634136199951,
+      "decision_values": {
+        "cosine": 1.0,
+        "finite": true,
+        "max_abs": 0.0008060634136199951,
+        "mean_abs": 2.6656780391931534e-06,
+        "shape": [
+          384
+        ]
+      },
+      "decoder_output": {
+        "cosine": 0.9999971353515935,
+        "finite": true,
+        "max_abs": 0.00146484375,
+        "mean_abs": 0.00018576145521365106,
+        "shape": [
+          1,
+          2,
+          1024
+        ]
+      },
+      "encoder_length": 14,
+      "expected_decision_probability": 0.407470703125,
+      "expected_index": 91063,
+      "kind": "prefill",
+      "logits": {
+        "cosine": 0.9999721121675482,
+        "finite": true,
+        "max_abs": 0.046875,
+        "mean_abs": 0.0040637534111738205,
+        "shape": [
+          1,
+          256102
+        ]
+      },
+      "passed": true,
+      "reference": "call_0000.npz",
+      "selected_index": 91063,
+      "self_k_cache_out": {
+        "cosine": 0.9999942439566342,
+        "finite": true,
+        "max_abs": 0.01806640625,
+        "mean_abs": 0.0011661319294944406,
+        "shape": [
+          24,
+          1,
+          16,
+          2,
+          64
+        ]
+      },
+      "self_v_cache_out": {
+        "cosine": 0.9999944784540996,
+        "finite": true,
+        "max_abs": 0.025146484375,
+        "mean_abs": 0.0017903096741065383,
+        "shape": [
+          24,
+          1,
+          16,
+          2,
+          64
+        ]
+      },
+      "target_length": 2
+    },
+    {
+      "cache_length_in": 0,
+      "call_index": 1,
+      "decision_probability": 0.9999607801437378,
+      "decision_probability_error": 3.921985626220703e-05,
+      "decision_values": {
+        "cosine": 0.9999998410542806,
+        "finite": true,
+        "max_abs": 3.921985626220703e-05,
+        "mean_abs": 1.0213503998102169e-07,
+        "shape": [
+          384
+        ]
+      },
+      "decoder_output": {
+        "cosine": 0.9999970345550255,
+        "finite": true,
+        "max_abs": 0.001708984375,
+        "mean_abs": 0.00019276290549896657,
+        "shape": [
+          1,
+          2,
+          1024
+        ]
+      },
+      "encoder_length": 16,
+      "expected_decision_probability": 1.0,
+      "expected_index": 91063,
+      "kind": "prefill",
+      "logits": {
+        "cosine": 0.9999746333566847,
+        "finite": true,
+        "max_abs": 0.0625,
+        "mean_abs": 0.0042173597030341625,
+        "shape": [
+          1,
+          256102
+        ]
+      },
+      "passed": true,
+      "reference": "call_0001.npz",
+      "selected_index": 91063,
+      "self_k_cache_out": {
+        "cosine": 0.9999925004407044,
+        "finite": true,
+        "max_abs": 0.015625,
+        "mean_abs": 0.0011814613826572895,
+        "shape": [
+          24,
+          1,
+          16,
+          2,
+          64
+        ]
+      },
+      "self_v_cache_out": {
+        "cosine": 0.9999959532644126,
+        "finite": true,
+        "max_abs": 0.0263671875,
+        "mean_abs": 0.0018494842806831002,
+        "shape": [
+          24,
+          1,
+          16,
+          2,
+          64
+        ]
+      },
+      "target_length": 2
+    },
+    {
+      "cache_length_in": 2,
+      "call_index": 2,
+      "decision_probability": 0.9561044573783875,
+      "decision_probability_error": 0.003368198871612549,
+      "decision_values": {
+        "cosine": 1.0,
+        "finite": true,
+        "max_abs": 0.003368198871612549,
+        "mean_abs": 8.773524314165115e-06,
+        "shape": [
+          384
+        ]
+      },
+      "decoder_output": {
+        "cosine": 0.9999975743694647,
+        "finite": true,
+        "max_abs": 0.00067138671875,
+        "mean_abs": 0.0001314579276368022,
+        "shape": [
+          1,
+          1,
+          1024
+        ]
+      },
+      "encoder_length": 16,
+      "expected_decision_probability": 0.95947265625,
+      "expected_index": 3626,
+      "kind": "step",
+      "logits": {
+        "cosine": 1.0000035111349894,
+        "finite": true,
+        "max_abs": 0.0234375,
+        "mean_abs": 0.001002036384306848,
+        "shape": [
+          1,
+          256102
+        ]
+      },
+      "passed": true,
+      "reference": "call_0002.npz",
+      "selected_index": 3626,
+      "self_k_cache_out": {
+        "cosine": 0.999997040159559,
+        "finite": true,
+        "max_abs": 0.015625,
+        "mean_abs": 0.0005879816017113626,
+        "shape": [
+          24,
+          1,
+          16,
+          3,
+          64
+        ]
+      },
+      "self_v_cache_out": {
+        "cosine": 0.9999952093287435,
+        "finite": true,
+        "max_abs": 0.0234375,
+        "mean_abs": 0.0008998464327305555,
+        "shape": [
+          24,
+          1,
+          16,
+          3,
+          64
+        ]
+      },
+      "target_length": 1
+    },
+    {
+      "cache_length_in": 3,
+      "call_index": 3,
+      "decision_probability": 0.8860265612602234,
+      "decision_probability_error": 0.0011804699897766113,
+      "decision_values": {
+        "cosine": 0.9999999204828472,
+        "finite": true,
+        "max_abs": 0.0011804699897766113,
+        "mean_abs": 3.122879888906027e-06,
+        "shape": [
+          384
+        ]
+      },
+      "decoder_output": {
+        "cosine": 0.9999981461919566,
+        "finite": true,
+        "max_abs": 0.000732421875,
+        "mean_abs": 0.00014524388825520873,
+        "shape": [
+          1,
+          1,
+          1024
+        ]
+      },
+      "encoder_length": 16,
+      "expected_decision_probability": 0.88720703125,
+      "expected_index": 48378,
+      "kind": "step",
+      "logits": {
+        "cosine": 0.999992005245379,
+        "finite": true,
+        "max_abs": 0.015625,
+        "mean_abs": 0.0014801406068727374,
+        "shape": [
+          1,
+          256102
+        ]
+      },
+      "passed": true,
+      "reference": "call_0003.npz",
+      "selected_index": 48378,
+      "self_k_cache_out": {
+        "cosine": 0.9999986341728585,
+        "finite": true,
+        "max_abs": 0.01171875,
+        "mean_abs": 0.00039388713776133955,
+        "shape": [
+          24,
+          1,
+          16,
+          4,
+          64
+        ]
+      },
+      "self_v_cache_out": {
+        "cosine": 0.9999991349801901,
+        "finite": true,
+        "max_abs": 0.0185546875,
+        "mean_abs": 0.0005958395195193589,
+        "shape": [
+          24,
+          1,
+          16,
+          4,
+          64
+        ]
+      },
+      "target_length": 1
+    },
+    {
+      "cache_length_in": 4,
+      "call_index": 4,
+      "decision_probability": 0.9088609218597412,
+      "decision_probability_error": 0.0008070468902587891,
+      "decision_values": {
+        "cosine": 1.0,
+        "finite": true,
+        "max_abs": 0.0008070468902587891,
+        "mean_abs": 2.800486981868744e-06,
+        "shape": [
+          384
+        ]
+      },
+      "decoder_output": {
+        "cosine": 0.9999970817063847,
+        "finite": true,
+        "max_abs": 0.0010986328125,
+        "mean_abs": 0.0001936047337949276,
+        "shape": [
+          1,
+          1,
+          1024
+        ]
+      },
+      "encoder_length": 16,
+      "expected_decision_probability": 0.90966796875,
+      "expected_index": 73498,
+      "kind": "step",
+      "logits": {
+        "cosine": 0.9999777029993264,
+        "finite": true,
+        "max_abs": 0.015625,
+        "mean_abs": 0.0016007787780836225,
+        "shape": [
+          1,
+          256102
+        ]
+      },
+      "passed": true,
+      "reference": "call_0004.npz",
+      "selected_index": 73498,
+      "self_k_cache_out": {
+        "cosine": 0.9999984753004112,
+        "finite": true,
+        "max_abs": 0.013671875,
+        "mean_abs": 0.00032088172156363726,
+        "shape": [
+          24,
+          1,
+          16,
+          5,
+          64
+        ]
+      },
+      "self_v_cache_out": {
+        "cosine": 1.0000001427137462,
+        "finite": true,
+        "max_abs": 0.0166015625,
+        "mean_abs": 0.00048436419456265867,
+        "shape": [
+          24,
+          1,
+          16,
+          5,
+          64
+        ]
+      },
+      "target_length": 1
+    },
+    {
+      "cache_length_in": 5,
+      "call_index": 5,
+      "decision_probability": 0.07608647644519806,
+      "decision_probability_error": 2.4363398551940918e-05,
+      "decision_values": {
+        "cosine": 0.9999997573347003,
+        "finite": true,
+        "max_abs": 0.005746573209762573,
+        "mean_abs": 4.4553056795848534e-05,
+        "shape": [
+          384
+        ]
+      },
+      "decoder_output": {
+        "cosine": 0.9999991042421644,
+        "finite": true,
+        "max_abs": 0.0009765625,
+        "mean_abs": 0.00017331948038190603,
+        "shape": [
+          1,
+          1,
+          1024
+        ]
+      },
+      "encoder_length": 16,
+      "expected_decision_probability": 0.07611083984375,
+      "expected_index": 131355,
+      "kind": "step",
+      "logits": {
+        "cosine": 0.9999652749778949,
+        "finite": true,
+        "max_abs": 0.015625,
+        "mean_abs": 0.0023333807475864887,
+        "shape": [
+          1,
+          256102
+        ]
+      },
+      "passed": true,
+      "reference": "call_0005.npz",
+      "selected_index": 131355,
+      "self_k_cache_out": {
+        "cosine": 0.9999974785782157,
+        "finite": true,
+        "max_abs": 0.0079345703125,
+        "mean_abs": 0.00024070922518149018,
+        "shape": [
+          24,
+          1,
+          16,
+          6,
+          64
+        ]
+      },
+      "self_v_cache_out": {
+        "cosine": 0.9999973821291762,
+        "finite": true,
+        "max_abs": 0.015625,
+        "mean_abs": 0.00036102073499932885,
+        "shape": [
+          24,
+          1,
+          16,
+          6,
+          64
+        ]
+      },
+      "target_length": 1
+    },
+    {
+      "cache_length_in": 6,
+      "call_index": 6,
+      "decision_probability": 0.08710774034261703,
+      "decision_probability_error": 0.0001725330948829651,
+      "decision_values": {
+        "cosine": 1.0,
+        "finite": true,
+        "max_abs": 0.0030554533004760742,
+        "mean_abs": 4.8541540309088305e-05,
+        "shape": [
+          384
+        ]
+      },
+      "decoder_output": {
+        "cosine": 0.9999980882865493,
+        "finite": true,
+        "max_abs": 0.001953125,
+        "mean_abs": 0.00020530144684016705,
+        "shape": [
+          1,
+          1,
+          1024
+        ]
+      },
+      "encoder_length": 16,
+      "expected_decision_probability": 0.0872802734375,
+      "expected_index": 131355,
+      "kind": "step",
+      "logits": {
+        "cosine": 0.9999645610205837,
+        "finite": true,
+        "max_abs": 0.015625,
+        "mean_abs": 0.0023840374778956175,
+        "shape": [
+          1,
+          256102
+        ]
+      },
+      "passed": true,
+      "reference": "call_0006.npz",
+      "selected_index": 131355,
+      "self_k_cache_out": {
+        "cosine": 0.9999929311038606,
+        "finite": true,
+        "max_abs": 0.01171875,
+        "mean_abs": 0.00020308795501478016,
+        "shape": [
+          24,
+          1,
+          16,
+          7,
+          64
+        ]
+      },
+      "self_v_cache_out": {
+        "cosine": 0.9999984709526882,
+        "finite": true,
+        "max_abs": 0.015625,
+        "mean_abs": 0.00030982866883277893,
+        "shape": [
+          24,
+          1,
+          16,
+          7,
+          64
+        ]
+      },
+      "target_length": 1
+    },
+    {
+      "cache_length_in": 0,
+      "call_index": 7,
+      "decision_probability": 0.421016126871109,
+      "decision_probability_error": 0.0015825331211090088,
+      "decision_values": {
+        "cosine": 1.0,
+        "finite": true,
+        "max_abs": 0.005083143711090088,
+        "mean_abs": 3.0141556635499e-05,
+        "shape": [
+          384
+        ]
+      },
+      "decoder_output": {
+        "cosine": 0.9999935099965258,
+        "finite": true,
+        "max_abs": 0.002044677734375,
+        "mean_abs": 0.00023777817841619253,
+        "shape": [
+          1,
+          6,
+          1024
+        ]
+      },
+      "encoder_length": 18,
+      "expected_decision_probability": 0.41943359375,
+      "expected_index": 131355,
+      "kind": "prefill",
+      "logits": {
+        "cosine": 0.9999670108044457,
+        "finite": true,
+        "max_abs": 0.046875,
+        "mean_abs": 0.003969130571931601,
+        "shape": [
+          1,
+          256102
+        ]
+      },
+      "passed": true,
+      "reference": "call_0007.npz",
+      "selected_index": 131355,
+      "self_k_cache_out": {
+        "cosine": 0.9999945676734823,
+        "finite": true,
+        "max_abs": 0.0185546875,
+        "mean_abs": 0.0018541266908869147,
+        "shape": [
+          24,
+          1,
+          16,
+          6,
+          64
+        ]
+      },
+      "self_v_cache_out": {
+        "cosine": 0.9999944965708253,
+        "finite": true,
+        "max_abs": 0.031982421875,
+        "mean_abs": 0.0028181651141494513,
+        "shape": [
+          24,
+          1,
+          16,
+          6,
+          64
+        ]
+      },
+      "target_length": 6
+    },
+    {
+      "cache_length_in": 0,
+      "call_index": 8,
+      "decision_probability": 0.16362911462783813,
+      "decision_probability_error": 0.0011535286903381348,
+      "decision_values": {
+        "cosine": 1.0,
+        "finite": true,
+        "max_abs": 0.003579854965209961,
+        "mean_abs": 1.993278601730708e-05,
+        "shape": [
+          384
+        ]
+      },
+      "decoder_output": {
+        "cosine": 0.999995908815684,
+        "finite": true,
+        "max_abs": 0.0018310546875,
+        "mean_abs": 0.00024404241412412375,
+        "shape": [
+          1,
+          6,
+          1024
+        ]
+      },
+      "encoder_length": 20,
+      "expected_decision_probability": 0.1624755859375,
+      "expected_index": 131355,
+      "kind": "prefill",
+      "logits": {
+        "cosine": 0.9999742596165958,
+        "finite": true,
+        "max_abs": 0.046875,
+        "mean_abs": 0.0038825187366455793,
+        "shape": [
+          1,
+          256102
+        ]
+      },
+      "passed": true,
+      "reference": "call_0008.npz",
+      "selected_index": 131355,
+      "self_k_cache_out": {
+        "cosine": 0.9999855248048086,
+        "finite": true,
+        "max_abs": 0.0162353515625,
+        "mean_abs": 0.0018693171441555023,
+        "shape": [
+          24,
+          1,
+          16,
+          6,
+          64
+        ]
+      },
+      "self_v_cache_out": {
+        "cosine": 0.9999922954242525,
+        "finite": true,
+        "max_abs": 0.03125,
+        "mean_abs": 0.0028946097008883953,
+        "shape": [
+          24,
+          1,
+          16,
+          6,
+          64
+        ]
+      },
+      "target_length": 6
+    },
+    {
+      "cache_length_in": 0,
+      "call_index": 9,
+      "decision_probability": 0.47865068912506104,
+      "decision_probability_error": 0.002332329750061035,
+      "decision_values": {
+        "cosine": 1.0000000797708535,
+        "finite": true,
+        "max_abs": 0.0029970407485961914,
+        "mean_abs": 1.5725536286481656e-05,
+        "shape": [
+          384
+        ]
+      },
+      "decoder_output": {
+        "cosine": 0.9999939912475693,
+        "finite": true,
+        "max_abs": 0.001953125,
+        "mean_abs": 0.0002511587517801672,
+        "shape": [
+          1,
+          6,
+          1024
+        ]
+      },
+      "encoder_length": 22,
+      "expected_decision_probability": 0.476318359375,
+      "expected_index": 131355,
+      "kind": "prefill",
+      "logits": {
+        "cosine": 0.999971950104783,
+        "finite": true,
+        "max_abs": 0.0390625,
+        "mean_abs": 0.004319110885262489,
+        "shape": [
+          1,
+          256102
+        ]
+      },
+      "passed": true,
+      "reference": "call_0009.npz",
+      "selected_index": 131355,
+      "self_k_cache_out": {
+        "cosine": 0.999985195919569,
+        "finite": true,
+        "max_abs": 0.0224609375,
+        "mean_abs": 0.0019304282031953335,
+        "shape": [
+          24,
+          1,
+          16,
+          6,
+          64
+        ]
+      },
+      "self_v_cache_out": {
+        "cosine": 0.9999814653780985,
+        "finite": true,
+        "max_abs": 0.034423828125,
+        "mean_abs": 0.002931030699983239,
+        "shape": [
+          24,
+          1,
+          16,
+          6,
+          64
+        ]
+      },
+      "target_length": 6
+    },
+    {
+      "cache_length_in": 0,
+      "call_index": 10,
+      "decision_probability": 0.07711177319288254,
+      "decision_probability_error": 2.4370849132537842e-05,
+      "decision_values": {
+        "cosine": 0.9999998391176957,
+        "finite": true,
+        "max_abs": 0.005328238010406494,
+        "mean_abs": 3.6927074688719586e-05,
+        "shape": [
+          384
+        ]
+      },
+      "decoder_output": {
+        "cosine": 0.9999947154934936,
+        "finite": true,
+        "max_abs": 0.00244140625,
+        "mean_abs": 0.00023263665207196027,
+        "shape": [
+          1,
+          6,
+          1024
+        ]
+      },
+      "encoder_length": 24,
+      "expected_decision_probability": 0.07708740234375,
+      "expected_index": 131355,
+      "kind": "prefill",
+      "logits": {
+        "cosine": 0.99998062737878,
+        "finite": true,
+        "max_abs": 0.0390625,
+        "mean_abs": 0.0036669434048235416,
+        "shape": [
+          1,
+          256102
+        ]
+      },
+      "passed": true,
+      "reference": "call_0010.npz",
+      "selected_index": 131355,
+      "self_k_cache_out": {
+        "cosine": 0.999985631358124,
+        "finite": true,
+        "max_abs": 0.01708984375,
+        "mean_abs": 0.0018249866552650928,
+        "shape": [
+          24,
+          1,
+          16,
+          6,
+          64
+        ]
+      },
+      "self_v_cache_out": {
+        "cosine": 0.9999885689733632,
+        "finite": true,
+        "max_abs": 0.03125,
+        "mean_abs": 0.0028214487247169018,
+        "shape": [
+          24,
+          1,
+          16,
+          6,
+          64
+        ]
+      },
+      "target_length": 6
+    },
+    {
+      "cache_length_in": 0,
+      "call_index": 11,
+      "decision_probability": 0.9989677667617798,
+      "decision_probability_error": 0.0010322332382202148,
+      "decision_values": {
+        "cosine": 0.9999999205269319,
+        "finite": true,
+        "max_abs": 0.0010322332382202148,
+        "mean_abs": 2.6989728212356567e-06,
+        "shape": [
+          384
+        ]
+      },
+      "decoder_output": {
+        "cosine": 0.9999948869065539,
+        "finite": true,
+        "max_abs": 0.0019683837890625,
+        "mean_abs": 0.00022829114459455013,
+        "shape": [
+          1,
+          6,
+          1024
+        ]
+      },
+      "encoder_length": 25,
+      "expected_decision_probability": 1.0,
+      "expected_index": 131355,
+      "kind": "prefill",
+      "logits": {
+        "cosine": 0.9999627463545295,
+        "finite": true,
+        "max_abs": 0.046875,
+        "mean_abs": 0.0036561780143529177,
+        "shape": [
+          1,
+          256102
+        ]
+      },
+      "passed": true,
+      "reference": "call_0011.npz",
+      "selected_index": 131355,
+      "self_k_cache_out": {
+        "cosine": 0.9999848682020398,
+        "finite": true,
+        "max_abs": 0.0234375,
+        "mean_abs": 0.0017826484981924295,
+        "shape": [
+          24,
+          1,
+          16,
+          6,
+          64
+        ]
+      },
+      "self_v_cache_out": {
+        "cosine": 0.9999929219570716,
+        "finite": true,
+        "max_abs": 0.02734375,
+        "mean_abs": 0.002748432569205761,
+        "shape": [
+          24,
+          1,
+          16,
+          6,
+          64
+        ]
+      },
+      "target_length": 6
+    },
+    {
+      "cache_length_in": 6,
+      "call_index": 12,
+      "decision_probability": 0.9998286962509155,
+      "decision_probability_error": 0.00017130374908447266,
+      "decision_values": {
+        "cosine": 0.9999999205271024,
+        "finite": true,
+        "max_abs": 0.00017130374908447266,
+        "mean_abs": 6.280218372012314e-07,
+        "shape": [
+          384
+        ]
+      },
+      "decoder_output": {
+        "cosine": 0.9999983980737686,
+        "finite": true,
+        "max_abs": 0.0006103515625,
+        "mean_abs": 0.000124961428809911,
+        "shape": [
+          1,
+          1,
+          1024
+        ]
+      },
+      "encoder_length": 25,
+      "expected_decision_probability": 1.0,
+      "expected_index": 10,
+      "kind": "step",
+      "logits": {
+        "cosine": 0.9999821523859538,
+        "finite": true,
+        "max_abs": 0.01171875,
+        "mean_abs": 0.00125691550783813,
+        "shape": [
+          1,
+          256102
+        ]
+      },
+      "passed": true,
+      "reference": "call_0012.npz",
+      "selected_index": 10,
+      "self_k_cache_out": {
+        "cosine": 0.9999971186888882,
+        "finite": true,
+        "max_abs": 0.009765625,
+        "mean_abs": 0.00018626192468218505,
+        "shape": [
+          24,
+          1,
+          16,
+          7,
+          64
+        ]
+      },
+      "self_v_cache_out": {
+        "cosine": 0.9999983016437753,
+        "finite": true,
+        "max_abs": 0.015625,
+        "mean_abs": 0.00027790473541244864,
+        "shape": [
+          24,
+          1,
+          16,
+          7,
+          64
+        ]
+      },
+      "target_length": 1
+    },
+    {
+      "cache_length_in": 7,
+      "call_index": 13,
+      "decision_probability": 0.9956769347190857,
+      "decision_probability_error": 0.004323065280914307,
+      "decision_values": {
+        "cosine": 1.0,
+        "finite": true,
+        "max_abs": 0.004323065280914307,
+        "mean_abs": 3.867456689476967e-05,
+        "shape": [
+          384
+        ]
+      },
+      "decoder_output": {
+        "cosine": 0.9999974566502624,
+        "finite": true,
+        "max_abs": 0.0013427734375,
+        "mean_abs": 0.00023544678697362542,
+        "shape": [
+          1,
+          1,
+          1024
+        ]
+      },
+      "encoder_length": 25,
+      "expected_decision_probability": 1.0,
+      "expected_index": 3346,
+      "kind": "step",
+      "logits": {
+        "cosine": 0.9999804922856206,
+        "finite": true,
+        "max_abs": 0.015625,
+        "mean_abs": 0.001663504634052515,
+        "shape": [
+          1,
+          256102
+        ]
+      },
+      "passed": true,
+      "reference": "call_0013.npz",
+      "selected_index": 3346,
+      "self_k_cache_out": {
+        "cosine": 0.9999986717693493,
+        "finite": true,
+        "max_abs": 0.01171875,
+        "mean_abs": 0.00015738497313577682,
+        "shape": [
+          24,
+          1,
+          16,
+          8,
+          64
+        ]
+      },
+      "self_v_cache_out": {
+        "cosine": 0.9999969677619079,
+        "finite": true,
+        "max_abs": 0.017578125,
+        "mean_abs": 0.00023985774896573275,
+        "shape": [
+          24,
+          1,
+          16,
+          8,
+          64
+        ]
+      },
+      "target_length": 1
+    },
+    {
+      "cache_length_in": 8,
+      "call_index": 14,
+      "decision_probability": 1.0,
+      "decision_probability_error": 0.0,
+      "decision_values": {
+        "cosine": 0.9999999205271466,
+        "finite": true,
+        "max_abs": 0.0,
+        "mean_abs": 0.0,
+        "shape": [
+          384
+        ]
+      },
+      "decoder_output": {
+        "cosine": 0.9999967905088514,
+        "finite": true,
+        "max_abs": 0.00146484375,
+        "mean_abs": 0.00022304593585431576,
+        "shape": [
+          1,
+          1,
+          1024
+        ]
+      },
+      "encoder_length": 25,
+      "expected_decision_probability": 1.0,
+      "expected_index": 105847,
+      "kind": "step",
+      "logits": {
+        "cosine": 0.9999766896134112,
+        "finite": true,
+        "max_abs": 0.01953125,
+        "mean_abs": 0.002278149826452136,
+        "shape": [
+          1,
+          256102
+        ]
+      },
+      "passed": true,
+      "reference": "call_0014.npz",
+      "selected_index": 105847,
+      "self_k_cache_out": {
+        "cosine": 0.9999979300994587,
+        "finite": true,
+        "max_abs": 0.015625,
+        "mean_abs": 0.00021089274378027767,
+        "shape": [
+          24,
+          1,
+          16,
+          9,
+          64
+        ]
+      },
+      "self_v_cache_out": {
+        "cosine": 0.9999941532905471,
+        "finite": true,
+        "max_abs": 0.0234375,
+        "mean_abs": 0.0003259513177908957,
+        "shape": [
+          24,
+          1,
+          16,
+          9,
+          64
+        ]
+      },
+      "target_length": 1
+    },
+    {
+      "cache_length_in": 9,
+      "call_index": 15,
+      "decision_probability": 0.9972903728485107,
+      "decision_probability_error": 0.002709627151489258,
+      "decision_values": {
+        "cosine": 1.0,
+        "finite": true,
+        "max_abs": 0.002709627151489258,
+        "mean_abs": 1.1583324521780014e-05,
+        "shape": [
+          384
+        ]
+      },
+      "decoder_output": {
+        "cosine": 0.9999986444933419,
+        "finite": true,
+        "max_abs": 0.0009765625,
+        "mean_abs": 0.00016417179722338915,
+        "shape": [
+          1,
+          1,
+          1024
+        ]
+      },
+      "encoder_length": 25,
+      "expected_decision_probability": 1.0,
+      "expected_index": 290,
+      "kind": "step",
+      "logits": {
+        "cosine": 0.9999719873463224,
+        "finite": true,
+        "max_abs": 0.015625,
+        "mean_abs": 0.0019416811410337687,
+        "shape": [
+          1,
+          256102
+        ]
+      },
+      "passed": true,
+      "reference": "call_0015.npz",
+      "selected_index": 290,
+      "self_k_cache_out": {
+        "cosine": 0.9999990591839173,
+        "finite": true,
+        "max_abs": 0.009765625,
+        "mean_abs": 0.00014829474093858153,
+        "shape": [
+          24,
+          1,
+          16,
+          10,
+          64
+        ]
+      },
+      "self_v_cache_out": {
+        "cosine": 0.9999974754018853,
+        "finite": true,
+        "max_abs": 0.015625,
+        "mean_abs": 0.00023074718774296343,
+        "shape": [
+          24,
+          1,
+          16,
+          10,
+          64
+        ]
+      },
+      "target_length": 1
+    },
+    {
+      "cache_length_in": 10,
+      "call_index": 16,
+      "decision_probability": 0.8544600605964661,
+      "decision_probability_error": 0.14456337690353394,
+      "decision_values": {
+        "cosine": 0.9999691421796342,
+        "finite": true,
+        "max_abs": 0.14456337690353394,
+        "mean_abs": 0.0007502090302295983,
+        "shape": [
+          384
+        ]
+      },
+      "decoder_output": {
+        "cosine": 0.9999979750072502,
+        "finite": true,
+        "max_abs": 0.0009765625,
+        "mean_abs": 0.00018312653992325068,
+        "shape": [
+          1,
+          1,
+          1024
+        ]
+      },
+      "encoder_length": 25,
+      "expected_decision_probability": 0.9990234375,
+      "expected_index": 199145,
+      "kind": "step",
+      "logits": {
+        "cosine": 0.999975088005354,
+        "finite": true,
+        "max_abs": 0.015625,
+        "mean_abs": 0.0016474383883178234,
+        "shape": [
+          1,
+          256102
+        ]
+      },
+      "passed": false,
+      "reference": "call_0016.npz",
+      "selected_index": 199145,
+      "self_k_cache_out": {
+        "cosine": 0.9999983908663428,
+        "finite": true,
+        "max_abs": 0.015625,
+        "mean_abs": 0.00011939463729504496,
+        "shape": [
+          24,
+          1,
+          16,
+          11,
+          64
+        ]
+      },
+      "self_v_cache_out": {
+        "cosine": 0.9999968983072037,
+        "finite": true,
+        "max_abs": 0.015625,
+        "mean_abs": 0.0001808301458368078,
+        "shape": [
+          24,
+          1,
+          16,
+          11,
+          64
+        ]
+      },
+      "target_length": 1
+    },
+    {
+      "cache_length_in": 11,
+      "call_index": 17,
+      "decision_probability": 0.13717086613178253,
+      "decision_probability_error": 0.11673538386821747,
+      "decision_values": {
+        "cosine": 0.995565894005834,
+        "finite": true,
+        "max_abs": 0.48802873492240906,
+        "mean_abs": 0.030170800164341927,
+        "shape": [
+          384
+        ]
+      },
+      "decoder_output": {
+        "cosine": 0.9999988672520113,
+        "finite": true,
+        "max_abs": 0.0009765625,
+        "mean_abs": 0.00014539924450218678,
+        "shape": [
+          1,
+          1,
+          1024
+        ]
+      },
+      "encoder_length": 25,
+      "expected_decision_probability": 0.25390625,
+      "expected_index": 247805,
+      "kind": "step",
+      "logits": {
+        "cosine": 0.9999897254942253,
+        "finite": true,
+        "max_abs": 0.015625,
+        "mean_abs": 0.0010704657761380076,
+        "shape": [
+          1,
+          256102
+        ]
+      },
+      "passed": false,
+      "reference": "call_0017.npz",
+      "selected_index": 247805,
+      "self_k_cache_out": {
+        "cosine": 0.999999119697664,
+        "finite": true,
+        "max_abs": 0.0078125,
+        "mean_abs": 0.00011253398406552151,
+        "shape": [
+          24,
+          1,
+          16,
+          12,
+          64
+        ]
+      },
+      "self_v_cache_out": {
+        "cosine": 0.9999979951841966,
+        "finite": true,
+        "max_abs": 0.015625,
+        "mean_abs": 0.0001663088332861662,
+        "shape": [
+          24,
+          1,
+          16,
+          12,
+          64
+        ]
+      },
+      "target_length": 1
+    },
+    {
+      "cache_length_in": 12,
+      "call_index": 18,
+      "decision_probability": 0.16657370328903198,
+      "decision_probability_error": 0.19158059358596802,
+      "decision_values": {
+        "cosine": 0.9986733875046848,
+        "finite": true,
+        "max_abs": 0.458432674407959,
+        "mean_abs": 0.007634734269231558,
+        "shape": [
+          384
+        ]
+      },
+      "decoder_output": {
+        "cosine": 0.9999986801203467,
+        "finite": true,
+        "max_abs": 0.0009765625,
+        "mean_abs": 0.00014651636593043804,
+        "shape": [
+          1,
+          1,
+          1024
+        ]
+      },
+      "encoder_length": 25,
+      "expected_decision_probability": 0.358154296875,
+      "expected_index": 3,
+      "kind": "step",
+      "logits": {
+        "cosine": 0.9999775684105905,
+        "finite": true,
+        "max_abs": 0.015625,
+        "mean_abs": 0.002024387940764427,
+        "shape": [
+          1,
+          256102
+        ]
+      },
+      "passed": false,
+      "reference": "call_0018.npz",
+      "selected_index": 3,
+      "self_k_cache_out": {
+        "cosine": 0.9999988318028588,
+        "finite": true,
+        "max_abs": 0.01171875,
+        "mean_abs": 0.00011936255032196641,
+        "shape": [
+          24,
+          1,
+          16,
+          13,
+          64
+        ]
+      },
+      "self_v_cache_out": {
+        "cosine": 0.9999997847809112,
+        "finite": true,
+        "max_abs": 0.0234375,
+        "mean_abs": 0.00018005580932367593,
+        "shape": [
+          24,
+          1,
+          16,
+          13,
+          64
+        ]
+      },
+      "target_length": 1
+    },
+    {
+      "cache_length_in": 13,
+      "call_index": 19,
+      "decision_probability": 0.07585817575454712,
+      "decision_probability_error": 8.52346420288086e-06,
+      "decision_values": {
+        "cosine": 0.975772828026584,
+        "finite": true,
+        "max_abs": 0.4854780435562134,
+        "mean_abs": 0.13991792500019073,
+        "shape": [
+          384
+        ]
+      },
+      "decoder_output": {
+        "cosine": 0.9999984642710465,
+        "finite": true,
+        "max_abs": 0.00146484375,
+        "mean_abs": 0.00013820704771205783,
+        "shape": [
+          1,
+          1,
+          1024
+        ]
+      },
+      "encoder_length": 25,
+      "expected_decision_probability": 0.07586669921875,
+      "expected_index": 3,
+      "kind": "step",
+      "logits": {
+        "cosine": 0.9999776159762085,
+        "finite": true,
+        "max_abs": 0.0078125,
+        "mean_abs": 0.0010674752993509173,
+        "shape": [
+          1,
+          256102
+        ]
+      },
+      "passed": true,
+      "reference": "call_0019.npz",
+      "selected_index": 3,
+      "self_k_cache_out": {
+        "cosine": 1.000000763490079,
+        "finite": true,
+        "max_abs": 0.00885009765625,
+        "mean_abs": 0.00010213255882263184,
+        "shape": [
+          24,
+          1,
+          16,
+          14,
+          64
+        ]
+      },
+      "self_v_cache_out": {
+        "cosine": 1.000000897276765,
+        "finite": true,
+        "max_abs": 0.0234375,
+        "mean_abs": 0.00015823141438886523,
+        "shape": [
+          24,
+          1,
+          16,
+          14,
+          64
+        ]
+      },
+      "target_length": 1
+    }
+  ],
+  "generated_at": "2026-07-20T16:58:13.456433+00:00",
+  "maximum_decision_probability_error": 0.02,
+  "minimum_cosine": 0.999,
+  "passed": false,
+  "prefill_engine": "/opt/streamglass/engine-cache/87d587047967766c63f3de7012a479fbd4f3c471ffea70efe8454017bf908709/decoder_prefill_mixed.engine",
+  "prefill_engine_sha256": "631e0f8a52e06d46e09a4f1bc23426c426517093d5ebf6f1357ff029252c5b2b",
+  "schema_version": 1,
+  "step_engine": "/opt/streamglass/engine-cache/87d587047967766c63f3de7012a479fbd4f3c471ffea70efe8454017bf908709/decoder_step_mixed.engine",
+  "step_engine_sha256": "d811246270705bca09d545ad960ecbba2cd1edabab00acaab744ddcecd75c15e"
+}

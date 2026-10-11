@@ -1,0 +1,31 @@
+{
+  "schema_version": 1,
+  "seamless_communication": {
+    "source": "third_party/seamless_communication",
+    "source_repository_commit": "ae368499447877caa86fa3608c0a06aea2d0581c",
+    "fairseq2_requirement": "0.2.*",
+    "local_snapshot": "third_party/seamless_communication"
+  },
+  "fairseq2": {
+    "version": "0.2.1",
+    "source_repository": "https://github.com/facebookresearch/fairseq2.git",
+    "source_repository_commit": "0f9f221f67eef87802c6df9b7a36cfb03fe6bf93",
+    "local_snapshot": "third_party/fairseq2",
+    "submodules": {
+      "fmt": "a33701196adfad74917046096bf5a2aa0ab0bb50",
+      "gtest": "3026483ae575e2de942db5e760cf95e973308dd5",
+      "kaldi-native-fbank": "740f1313a71b618418154a143506eb501a4dfd12",
+      "pybind11": "8a099e44b3d5f85b20f05828d919d2332a8de841",
+      "sentencepiece": "58f256cf6f01bb86e6fa634a5cc560de5bd1667d",
+      "zip": "fefb8d6acc78b5f63d5a78b86a4900e694bd2862"
+    }
+  },
+  "torchaudio": {
+    "version": "2.2.0",
+    "source_repository": "https://github.com/pytorch/audio.git",
+    "source_repository_commit": "08901ade5d17d3e3cf6fc039cbd601cbd2853686",
+    "source_archive_sha256": "3eb86fdf560dda5e5e123382a13ec03c215ce8227c28fa249662e186c9d7a348",
+    "local_snapshot": "third_party/torchaudio",
+    "build_profile": "core-cpu-ops-no-sox-no-ffmpeg"
+  }
+}

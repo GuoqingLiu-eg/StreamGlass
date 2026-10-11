@@ -1,0 +1,67 @@
+# Copyright (c) Meta Platforms, Inc. and affiliates.
+# All rights reserved.
+#
+# This source code is licensed under the BSD-style license found in the
+# LICENSE file in the root directory of this source tree.
+
+on:
+  workflow_call:
+    inputs:
+      torch:
+        type: string
+        default: '2.1.1'
+      py:
+        type: string
+        default: '3.11'
+
+jobs:
+  lint:
+    name: Lint
+    runs-on:
+      labels: 4-core-ubuntu
+    container:
+      image: ghcr.io/facebookresearch/fairseq2-ci-manylinux_x86_64:2-cu118
+    defaults:
+      run:
+        shell: bash
+    steps:
+      - name: Check-out the repository
+        uses: actions/checkout@v3
+        with:
+          submodules: recursive
+          fetch-depth: 2
+      - name: Create the Python virtual environment
+        run: |
+          python${{ inputs.py }} -m venv ~/venv
+
+          echo ~/venv/bin >> "$GITHUB_PATH"
+      - name: Install PyTorch
+        run: |
+          pip install --extra-index-url https://download.pytorch.org/whl/cu118\
+            torch==${{ inputs.torch }}\
+      - name: Install requirements
+        run: |
+          pip install --requirement fairseq2n/python/requirements-build.txt
+      - name: Build the compilation database
+        id: setup
+        working-directory: fairseq2n
+        run: |
+          # Since we are only building the compilation database, we can ignore
+          # CUDA compatibility.
+          export CUDAFLAGS="--allow-unsupported-compiler"
+
+          CC=clang CXX=clang++ cmake -GNinja -DCMAKE_BUILD_TYPE=Release -B build
+      - name: Run clang-tidy
+        if: success() || (failure() && steps.setup.outcome == 'success')
+        working-directory: fairseq2n
+        run: |
+          echo "::add-matcher::./ci/problem-matchers/gcc.json"
+
+          function remove_matcher
+          {
+            echo "::remove-matcher owner=gcc::"
+          }
+
+          trap remove_matcher EXIT
+
+          run-clang-tidy -p build -config="{InheritParentConfig: true, WarningsAsErrors: '*'}" -quiet

@@ -1,0 +1,32 @@
+{
+  "acceptance": {
+    "aec_window_rms_p95_below_vad": true,
+    "attenuation_at_least_6_db": true
+  },
+  "aec": {
+    "peak": 0.026962369680404663,
+    "rms": 0.0015655450327267532,
+    "samples": 64000,
+    "window_rms_p50": 2.116472513030498e-05,
+    "window_rms_p95": 0.004781459553219441
+  },
+  "analysis_seconds": 4.0,
+  "attenuation_db": -18.79921981080425,
+  "configured_play_delay_ms": 170,
+  "echo_path": {
+    "aec_delay_ms": -74.1875,
+    "aec_normalized_correlation": 0.006658460526172359,
+    "raw_delay_ms": 167.375,
+    "raw_normalized_correlation": 0.04714975019888667
+  },
+  "passed": true,
+  "raw": {
+    "peak": 0.23094666004180908,
+    "rms": 0.013634102513869192,
+    "samples": 64000,
+    "window_rms_p50": 0.0030647008633980267,
+    "window_rms_p95": 0.03195346081012638
+  },
+  "sample_rate": 16000,
+  "vad_rms": 0.02
+}

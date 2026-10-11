@@ -1,0 +1,29 @@
+[Unit]
+Description=Seamless Streaming speech-to-speech runtime
+After=streamglass-build.service pipewire.service bluetooth.service
+Wants=bluetooth.service
+Requires=streamglass-build.service
+
+[Service]
+Type=notify
+User=streamglass
+Group=streamglass
+SupplementaryGroups=audio bluetooth
+WorkingDirectory=/opt/streamglass/current
+Environment=STREAMGLASS_CONFIG=/opt/streamglass/config/runtime.yaml
+ExecStart=/opt/streamglass/current/bin/streamglass-runtime
+Restart=on-failure
+RestartSec=2
+WatchdogSec=10
+TimeoutStopSec=15
+LimitRTPRIO=95
+LimitMEMLOCK=infinity
+MemoryMax=50G
+NoNewPrivileges=yes
+PrivateTmp=yes
+ProtectSystem=strict
+ReadWritePaths=/opt/streamglass/engine-cache /opt/streamglass/logs
+
+[Install]
+WantedBy=multi-user.target
+

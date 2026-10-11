@@ -1,0 +1,10 @@
+[Desktop Entry]
+Type=Application
+Version=1.0
+Name=OUTSMART UI
+Comment=Open the local OUTSMART translation interface
+Exec=/home/jetson/streamglass-deploy-staging/deploy/launch-outsmart-ui.sh
+Icon=web-browser
+Terminal=false
+Categories=Network;WebBrowser;
+StartupNotify=true

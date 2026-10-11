@@ -1,0 +1,48 @@
+# Copyright (c) Meta Platforms, Inc. and affiliates.
+# All rights reserved.
+#
+# This source code is licensed under the BSD-style license found in the
+# LICENSE file in the root directory of this source tree.
+
+on:
+  workflow_call:
+    inputs:
+      py:
+        type: string
+        default: '3.11'
+
+jobs:
+  lint:
+    name: Lint
+    runs-on:
+      labels: 4-core-ubuntu
+    container:
+      image: ghcr.io/facebookresearch/fairseq2-ci-manylinux_x86_64:2-cpu
+    defaults:
+      run:
+        shell: bash
+    steps:
+      - name: Check-out the repository
+        uses: actions/checkout@v3
+      - name: Create the Python virtual environment
+        run: |
+          python${{ inputs.py }} -m venv ~/venv
+
+          echo ~/venv/bin >> "$GITHUB_PATH"
+      - name: Install requirements
+        id: setup
+        run: |
+          pip install --requirement requirements-devel.txt
+      - name: Run shellcheck
+        if: success() || (failure() && steps.setup.outcome == 'success')
+        run: |
+          echo "::add-matcher::./ci/problem-matchers/gcc.json"
+
+          function remove_matcher
+          {
+            echo "::remove-matcher owner=gcc::"
+          }
+
+          trap remove_matcher EXIT
+
+          tools/run-shellcheck.sh .

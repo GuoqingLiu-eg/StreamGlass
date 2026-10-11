@@ -1,0 +1,70 @@
+# Copyright (c) Meta Platforms, Inc. and affiliates.
+# All rights reserved.
+#
+# This source code is licensed under the BSD-style license found in the
+# LICENSE file in the root directory of this source tree.
+
+on:
+  workflow_call:
+    inputs:
+      torch:
+        type: string
+        default: '2.1.1'
+      py:
+        type: string
+        default: '3.11'
+      version_override:
+        type: string
+        default: ''
+
+jobs:
+  build:
+    name: Build
+    runs-on:
+      labels: 4-core-ubuntu
+    container:
+      image: ghcr.io/facebookresearch/fairseq2-ci-manylinux_x86_64:2-cpu
+    defaults:
+      run:
+        shell: bash
+    steps:
+      - name: Check-out the repository
+        uses: actions/checkout@v3
+      - name: Create the Python virtual environment
+        run: |
+          python${{ inputs.py }} -m venv ~/venv
+
+          echo ~/venv/bin >> "$GITHUB_PATH"
+      - name: Install PyTorch
+        run: |
+          pip install --extra-index-url https://download.pytorch.org/whl/cpu\
+            torch==${{ inputs.torch }}
+      - name: Install requirements
+        run: |
+          pip install --requirement fairseq2n/python/requirements-build.txt
+      - name: Install Sphinx
+        run: |
+          pip install --requirement doc/requirements.txt
+      - name: Overwrite project version
+        if: inputs.version_override
+        run: |
+          tools/set-project-version.sh ${{ inputs.version_override }}
+      - name: Install fairseq2n
+        run: |
+          pip install --editable fairseq2n/python
+      - name: Install fairseq2
+        run: |
+          pip install --editable .
+      - name: Generate documentation
+        working-directory: doc
+        run: |
+          make html SPHINXOPTS="-W"
+      - name: Copy VERSION into the documentation
+        run: |
+          cp VERSION doc/build/html
+      - name: Upload documentation to staging
+        uses: actions/upload-artifact@v3
+        with:
+          name: doc
+          path: doc/build/html/
+          retention-days: 1

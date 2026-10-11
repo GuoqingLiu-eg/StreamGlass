@@ -1,0 +1,12 @@
+{
+  "schema_version": 1,
+  "component": "native_cpp_vocoder_official_parity",
+  "case_count": 4,
+  "passed": true,
+  "cases": [
+    {"unit_count": 1, "sample_count": 320, "cosine": 0.9998540081, "max_abs": 0.00244140625, "mean_abs": 0.0007574470714, "reference_rms": 0.04946854347, "candidate_rms": 0.04992191236, "finite": true, "playback_conversion_equal": true, "passed": true},
+    {"unit_count": 8, "sample_count": 2560, "cosine": 0.9996978827, "max_abs": 0.007385253906, "mean_abs": 0.0002034564503, "reference_rms": 0.0180190858, "candidate_rms": 0.01797558565, "finite": true, "playback_conversion_equal": true, "passed": true},
+    {"unit_count": 64, "sample_count": 20480, "cosine": 0.9998683242, "max_abs": 0.01104736328, "mean_abs": 0.0002280192217, "reference_rms": 0.02618164988, "candidate_rms": 0.02618337525, "finite": true, "playback_conversion_equal": true, "passed": true},
+    {"unit_count": 256, "sample_count": 81920, "cosine": 0.9998618804, "max_abs": 0.0309753418, "mean_abs": 0.0001857496536, "reference_rms": 0.02333409364, "candidate_rms": 0.02334005937, "finite": true, "playback_conversion_equal": true, "passed": true}
+  ]
+}

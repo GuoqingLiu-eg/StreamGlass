@@ -1,0 +1,2 @@
+name: nar_t2u_aligner@user
+char_tokenizer: file:///models/spm_char_lang38_tc.model

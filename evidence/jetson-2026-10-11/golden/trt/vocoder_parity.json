@@ -1,0 +1,70 @@
+{
+  "cases": [
+    {
+      "cosine": 0.9998539036205881,
+      "finite": true,
+      "max_abs": 0.00244140625,
+      "mean_abs": 0.000757447094656527,
+      "reference": "reference_len0001.npz",
+      "reference_rms": 0.049468543380498886,
+      "shape": [
+        1,
+        1,
+        320
+      ],
+      "tensorrt_rms": 0.0499219112098217,
+      "unit_length": 1
+    },
+    {
+      "cosine": 0.9996967271039207,
+      "finite": true,
+      "max_abs": 0.00738525390625,
+      "mean_abs": 0.0002034564531641081,
+      "reference": "reference_len0008.npz",
+      "reference_rms": 0.018019085749983788,
+      "shape": [
+        1,
+        1,
+        2560
+      ],
+      "tensorrt_rms": 0.017975585535168648,
+      "unit_length": 8
+    },
+    {
+      "cosine": 0.9998655032197035,
+      "finite": true,
+      "max_abs": 0.01104736328125,
+      "mean_abs": 0.00022801922750659287,
+      "reference": "reference_len0064.npz",
+      "reference_rms": 0.026181649416685104,
+      "shape": [
+        1,
+        1,
+        20480
+      ],
+      "tensorrt_rms": 0.026183374226093292,
+      "unit_length": 64
+    },
+    {
+      "cosine": 0.9998507944192495,
+      "finite": true,
+      "max_abs": 0.030975341796875,
+      "mean_abs": 0.00018574963905848563,
+      "reference": "reference_len0256.npz",
+      "reference_rms": 0.023334093391895294,
+      "shape": [
+        1,
+        1,
+        81920
+      ],
+      "tensorrt_rms": 0.02334005944430828,
+      "unit_length": 256
+    }
+  ],
+  "engine": "/opt/streamglass/engine-cache/87d587047967766c63f3de7012a479fbd4f3c471ffea70efe8454017bf908709/vocoder_fp16.engine",
+  "engine_sha256": "609681ed97d641ce01b4e6e09ece8f812d80e8575fa8b966003455811b4e67c9",
+  "generated_at": "2026-07-20T12:04:00.958814+00:00",
+  "minimum_cosine": 0.999,
+  "passed": true,
+  "schema_version": 1
+}

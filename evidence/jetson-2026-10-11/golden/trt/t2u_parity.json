@@ -1,0 +1,114 @@
+{
+  "cases": [
+    {
+      "chained_unit_ids": {
+        "equal": true,
+        "first_mismatches": [],
+        "match_rate": 1.0,
+        "mismatches": 0,
+        "shape": [
+          1,
+          57
+        ],
+        "shape_equal": true
+      },
+      "char_length": 26,
+      "decoder_isolated_unit_ids": {
+        "equal": true,
+        "first_mismatches": [],
+        "match_rate": 1.0,
+        "mismatches": 0,
+        "shape": [
+          1,
+          57
+        ],
+        "shape_equal": true
+      },
+      "frontend_char_features": {
+        "cosine": 0.9999843673567416,
+        "finite": true,
+        "max_abs": 0.09375,
+        "mean_abs": 0.0037232728209346533,
+        "shape": [
+          1,
+          26,
+          1024
+        ]
+      },
+      "frontend_durations": {
+        "equal": true,
+        "first_mismatches": [],
+        "match_rate": 1.0,
+        "mismatches": 0,
+        "shape": [
+          1,
+          26
+        ],
+        "shape_equal": true
+      },
+      "passed": true,
+      "reference": "call_0000.npz",
+      "text_length": 7,
+      "unit_length": 57
+    },
+    {
+      "chained_unit_ids": {
+        "equal": true,
+        "first_mismatches": [],
+        "match_rate": 1.0,
+        "mismatches": 0,
+        "shape": [
+          1,
+          131
+        ],
+        "shape_equal": true
+      },
+      "char_length": 54,
+      "decoder_isolated_unit_ids": {
+        "equal": true,
+        "first_mismatches": [],
+        "match_rate": 1.0,
+        "mismatches": 0,
+        "shape": [
+          1,
+          131
+        ],
+        "shape_equal": true
+      },
+      "frontend_char_features": {
+        "cosine": 0.9999930293465188,
+        "finite": true,
+        "max_abs": 0.078125,
+        "mean_abs": 0.0027628408279269934,
+        "shape": [
+          1,
+          54,
+          1024
+        ]
+      },
+      "frontend_durations": {
+        "equal": true,
+        "first_mismatches": [],
+        "match_rate": 1.0,
+        "mismatches": 0,
+        "shape": [
+          1,
+          54
+        ],
+        "shape_equal": true
+      },
+      "passed": true,
+      "reference": "call_0005.npz",
+      "text_length": 14,
+      "unit_length": 131
+    }
+  ],
+  "decoder_engine": "/opt/streamglass/engine-cache/87d587047967766c63f3de7012a479fbd4f3c471ffea70efe8454017bf908709/t2u_decoder_fp32.engine",
+  "decoder_engine_sha256": "ecc09e53faf7bcd83034a4d232992b28a5841e9625d40679abcdde298f380e65",
+  "frontend_engine": "/opt/streamglass/engine-cache/87d587047967766c63f3de7012a479fbd4f3c471ffea70efe8454017bf908709/t2u_frontend_fp16.engine",
+  "frontend_engine_sha256": "2b0e0cf96d807c161464cbf0a4efb7e06cbca6be654d4354f2c42196227826a6",
+  "generated_at": "2026-07-20T13:32:26.682014+00:00",
+  "minimum_cosine": 0.999,
+  "passed": true,
+  "schema_version": 1
+}

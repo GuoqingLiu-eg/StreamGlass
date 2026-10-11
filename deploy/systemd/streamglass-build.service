@@ -1,0 +1,18 @@
+[Unit]
+Description=Build and verify StreamGlass TensorRT engines
+After=streamglass-perf.service local-fs.target
+Requires=streamglass-perf.service
+Before=streamglass.service
+ConditionPathExists=/opt/streamglass/current/bin/streamglass-firstboot
+
+[Service]
+Type=oneshot
+User=streamglass
+Group=streamglass
+ExecStart=/opt/streamglass/current/bin/streamglass-firstboot
+TimeoutStartSec=infinity
+Nice=-5
+
+[Install]
+WantedBy=multi-user.target
+

@@ -1,0 +1,294 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="STMicroelectronics-NUS HELIX Corporate Lab develops on-device smart translation glasses."
+    />
+    <title>STMicroelectronics-NUS HELIX Corporate Lab - On-Device Smart Translation Glasses</title>
+    <link rel="stylesheet" href="./styles.css?v=20260820-title-v5" />
+  </head>
+  <body>
+    <div class="page-glow page-glow-left" aria-hidden="true"></div>
+    <div class="page-glow page-glow-right" aria-hidden="true"></div>
+
+    <main class="app-shell">
+      <header class="site-header">
+        <div class="brand-stage">
+          <img
+            class="nus-logo"
+            src="./assets/nus-logo.png"
+            alt="National University of Singapore"
+          />
+          <span class="brand-divider" aria-hidden="true"></span>
+          <div class="project-brand" aria-label="STMicroelectronics-NUS HELIX Corporate Lab">
+            <div class="helix-wordmark">
+              <span class="helix-name helix-name-primary">STMICROELECTRONICS-NUS</span>
+              <span class="helix-name helix-name-secondary">HELIX CORPORATE LAB</span>
+            </div>
+          </div>
+        </div>
+
+        <div
+          class="header-status"
+          id="runtimeStatus"
+          role="status"
+          aria-live="polite"
+          aria-label="Translation runtime status"
+        >
+          <span class="status-dot"></span>
+          <span id="runtimeStatusText">Connecting</span>
+        </div>
+      </header>
+
+      <div class="poster-composition">
+        <section
+          class="experience-stage cultural-hero translation-surface"
+          aria-labelledby="device-title"
+        >
+          <div
+            class="language-globe"
+            id="languageMap"
+            role="group"
+            aria-label="English selected. The globe is focused on the United Kingdom."
+          >
+            <div class="globe-viewport" id="globeViewport">
+              <canvas
+                class="globe-canvas"
+                id="globeCanvas"
+                aria-label="Interactive rotating world globe"
+              ></canvas>
+              <div class="globe-aura" aria-hidden="true"></div>
+              <div class="globe-country-label" id="globeCountryLabel" aria-hidden="true">
+                <img id="globeLabelFlag" src="./assets/flags/gb.svg" alt="" />
+                <strong id="globeLabelCountry">United Kingdom</strong>
+              </div>
+              <div class="globe-origin-label" id="globeSingaporeLabel" aria-hidden="true">
+                <span class="singapore-landmark-mark">
+                  <svg viewBox="0 0 36 36" aria-hidden="true">
+                    <path class="landmark-roof" d="M6 9.7c6.2-2.9 17.8-2.9 24 0l-1.4 3.1H7.4Z"></path>
+                    <path class="landmark-towers" d="M8.5 13.2h5.2v12.3H8.5Zm6.9 0h5.2v12.3h-5.2Zm6.9 0h5.2v12.3h-5.2Z"></path>
+                    <path class="landmark-water" d="M5.5 28.1c3.2-2 5.5 2 8.7 0s5.5-2 8.7 0 5.5-2 8.7 0"></path>
+                  </svg>
+                </span>
+                <span class="origin-label-copy">
+                  <small>HELIX CORP LAB · SG</small>
+                  <strong><img src="./assets/flags/sg.svg" alt="" /> Singapore</strong>
+                </span>
+              </div>
+              <span class="globe-instruction">DRAG TO EXPLORE</span>
+              <div class="globe-fallback" aria-hidden="true">
+                <img src="./assets/global-network-map.png" alt="" />
+              </div>
+            </div>
+
+            <div class="globe-targets" aria-label="Target language shortcuts">
+              <button class="globe-target" type="button" data-code="cmn" aria-label="Rotate to China"><img class="globe-target-flag" src="./assets/flags/cn.svg" alt="" /><span class="globe-target-code">CMN</span></button>
+              <button class="globe-target is-selected" type="button" data-code="eng" aria-label="Rotate to the United Kingdom" aria-pressed="true"><img class="globe-target-flag" src="./assets/flags/gb.svg" alt="" /><span class="globe-target-code">ENG</span></button>
+              <button class="globe-target" type="button" data-code="fra" aria-label="Rotate to France"><img class="globe-target-flag" src="./assets/flags/fr.svg" alt="" /><span class="globe-target-code">FRA</span></button>
+              <button class="globe-target" type="button" data-code="deu" aria-label="Rotate to Germany"><img class="globe-target-flag" src="./assets/flags/de.svg" alt="" /><span class="globe-target-code">DEU</span></button>
+              <button class="globe-target" type="button" data-code="spa" aria-label="Rotate to Spain"><img class="globe-target-flag" src="./assets/flags/es.svg" alt="" /><span class="globe-target-code">SPA</span></button>
+              <button class="globe-target" type="button" data-code="ita" aria-label="Rotate to Italy"><img class="globe-target-flag" src="./assets/flags/it.svg" alt="" /><span class="globe-target-code">ITA</span></button>
+              <button class="globe-target" type="button" data-code="jpn" aria-label="Rotate to Japan"><img class="globe-target-flag" src="./assets/flags/jp.svg" alt="" /><span class="globe-target-code">JPN</span></button>
+              <button class="globe-target" type="button" data-code="kor" aria-label="Rotate to South Korea"><img class="globe-target-flag" src="./assets/flags/kr.svg" alt="" /><span class="globe-target-code">KOR</span></button>
+              <button class="globe-target" type="button" data-code="rus" aria-label="Rotate to Russia"><img class="globe-target-flag" src="./assets/flags/ru.svg" alt="" /><span class="globe-target-code">RUS</span></button>
+              <button class="globe-target" type="button" data-code="por" aria-label="Rotate to Portugal"><img class="globe-target-flag" src="./assets/flags/pt.svg" alt="" /><span class="globe-target-code">POR</span></button>
+              <button class="globe-target" type="button" data-code="arb" aria-label="Rotate to Saudi Arabia"><img class="globe-target-flag" src="./assets/flags/sa.svg" alt="" /><span class="globe-target-code">ARB</span></button>
+              <button class="globe-target" type="button" data-code="vie" aria-label="Rotate to Vietnam"><img class="globe-target-flag" src="./assets/flags/vn.svg" alt="" /><span class="globe-target-code">VIE</span></button>
+            </div>
+
+            <div class="map-readout" aria-live="polite">
+              <span class="map-readout-flag" aria-hidden="true"><img id="mapFlag" src="./assets/flags/gb.svg" alt="" /></span>
+              <span class="map-readout-copy">
+                <span class="map-readout-kicker">TARGET IN VIEW</span>
+                <strong><span id="mapCode">ENG</span> · <span id="mapName">English</span></strong>
+                <small id="mapCountry">United Kingdom</small>
+              </span>
+              <span class="map-readout-signal" aria-hidden="true"><i></i><i></i><i></i></span>
+            </div>
+
+            <aside class="project-leads" aria-label="Project leaders">
+              <span class="project-leads-kicker">LED BY</span>
+              <span class="project-lead">Prof. Haizhou Li</span>
+              <span class="project-lead">Prof. Massimo Alioto</span>
+              <span class="project-lead">Dr. Xueyi Zhang</span>
+            </aside>
+          </div>
+
+          <div class="hero-copy">
+            <h1 id="device-title" aria-label="On-Device Smart Translation Glasses">
+              <span class="title-line"><span>On-Device Smart</span></span>
+              <span class="title-line"><span>Translation Glasses</span></span>
+            </h1>
+            <div class="hero-badges" aria-label="Project highlights">
+              <span>Real-time</span>
+              <span>Wearable</span>
+              <span>Energy-smart AI</span>
+            </div>
+          </div>
+
+          <section
+            class="translation-captions is-idle"
+            id="translationCaptions"
+            role="log"
+            aria-live="polite"
+            aria-relevant="additions text"
+            aria-atomic="false"
+          >
+            <div class="caption-meta">
+              <span class="caption-live-dot" aria-hidden="true"></span>
+              <span id="captionLanguage">English translation</span>
+              <span class="caption-phase" id="captionPhase">Ready</span>
+            </div>
+            <div class="caption-feed" id="captionFeed">
+              <div class="caption-previous" id="captionPrevious"></div>
+              <p class="caption-current" dir="auto">
+                <span id="captionCurrent" class="caption-placeholder">
+                  Translation will appear here.
+                </span>
+                <span class="caption-cursor" aria-hidden="true"></span>
+              </p>
+            </div>
+          </section>
+
+          <div class="translation-beam" aria-hidden="true">
+            <span class="beam-line"></span>
+            <i></i><i></i><i></i>
+          </div>
+
+          <div class="product-stage">
+            <img
+              class="hero-product"
+              src="./assets/streamglass-product-transparent.png"
+              alt="Black HELIX Corp Lab smart glasses"
+            />
+            <div class="lens-battery-hud" aria-label="Glasses battery 85 percent">
+              <span>BATTERY</span>
+              <strong>85%</strong>
+              <i aria-hidden="true"></i>
+            </div>
+            <div
+              class="lens-bluetooth-hud is-connected"
+              id="bluetoothLensStatus"
+              role="status"
+              aria-live="polite"
+              aria-label="Bluetooth connected"
+              data-connected="true"
+            >
+              <span class="bluetooth-pulse" aria-hidden="true">
+                <svg viewBox="0 0 24 24">
+                  <path d="m7 7 10 10-5 5V2l5 5L7 17"></path>
+                </svg>
+              </span>
+            </div>
+          </div>
+
+          <div class="translation-stage-content">
+            <div class="translation-heading">
+              <div class="heading-lockup">
+                <span class="translate-symbol" aria-hidden="true">A⇄</span>
+                <div>
+                  <p class="section-kicker">SIMULTANEOUS TRANSLATION</p>
+                  <h2 id="translation-title">Choose target language</h2>
+                  <p id="listeningCopy" class="listening-copy">Listening for any language...</p>
+                </div>
+              </div>
+
+              <button
+                class="listen-control"
+                id="listenControl"
+                type="button"
+                aria-pressed="false"
+                aria-label="Pause translation"
+                title="Pause or resume translation"
+              >
+                <span class="listen-rings" aria-hidden="true">
+                  <span class="listen-core">
+                    <span class="listen-bars">
+                      <i></i><i></i><i></i><i></i><i></i>
+                    </span>
+                  </span>
+                </span>
+                <span id="listenButtonLabel">Pause</span>
+              </button>
+            </div>
+
+            <div class="language-field">
+              <label for="targetLanguage">Target language <span>You will hear</span></label>
+              <div class="select-shell">
+                <span class="select-flag" aria-hidden="true"><img id="selectFlag" src="./assets/flags/gb.svg" alt="" /></span>
+                <select id="targetLanguage" aria-label="Choose target language">
+                  <option value="cmn">Chinese</option>
+                  <option value="eng">English</option>
+                  <option value="fra">French</option>
+                  <option value="deu">German</option>
+                  <option value="spa">Spanish</option>
+                  <option value="ita">Italian</option>
+                  <option value="jpn">Japanese</option>
+                  <option value="kor">Korean</option>
+                  <option value="rus">Russian</option>
+                  <option value="por">Portuguese</option>
+                  <option value="arb">Arabic</option>
+                  <option value="vie">Vietnamese</option>
+                </select>
+                <span class="select-code" id="selectCode">ENG</span>
+                <svg class="chevron" viewBox="0 0 20 20" aria-hidden="true">
+                  <path d="m4 7 6 6 6-6"></path>
+                </svg>
+              </div>
+            </div>
+
+            <div class="speaker-mirror-control" id="speakerMirrorControl">
+              <span class="speaker-mirror-icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24">
+                  <path d="M11 5 6.8 8.4H3.5v7.2h3.3L11 19V5Z"></path>
+                  <path d="M15 9.2a4 4 0 0 1 0 5.6"></path>
+                  <path d="M17.8 6.7a7.5 7.5 0 0 1 0 10.6"></path>
+                </svg>
+              </span>
+              <span class="speaker-mirror-copy">
+                <strong>Speaker mirror</strong>
+                <small id="speakerMirrorStatus">Glasses only</small>
+              </span>
+              <select
+                id="speakerOutput"
+                aria-label="Choose speaker output"
+                disabled
+              >
+                <option value="">No speaker detected</option>
+              </select>
+              <label class="speaker-switch" title="Play on glasses and speaker">
+                <input
+                  id="speakerMirror"
+                  type="checkbox"
+                  aria-label="Mirror translation to speaker"
+                />
+                <span aria-hidden="true"></span>
+              </label>
+              <label class="speaker-volume-control" for="speakerVolume">
+                <span>Volume</span>
+                <input
+                  id="speakerVolume"
+                  type="range"
+                  min="0"
+                  max="100"
+                  step="5"
+                  value="90"
+                  aria-label="Speaker mirror volume"
+                  disabled
+                />
+                <output id="speakerVolumeValue" for="speakerVolume">90%</output>
+              </label>
+            </div>
+          </div>
+        </section>
+      </div>
+
+    </main>
+
+    <div class="toast" id="toast" role="status" aria-live="polite"></div>
+    <script type="module" src="./app.js?v=20260811-caption-center-v2"></script>
+  </body>
+</html>

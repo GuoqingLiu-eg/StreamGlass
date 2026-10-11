@@ -1,0 +1,8 @@
+/.git
+/artifacts
+/engines
+/logs
+/models
+__pycache__
+*.pyc
+/third_party/seamless_communication/demo

@@ -1,0 +1,22 @@
+[Unit]
+Description=StreamGlass full-duplex realtime translation
+After=pipewire.service pipewire-pulse.service wireplumber.service
+Wants=pipewire.service pipewire-pulse.service wireplumber.service
+StartLimitIntervalSec=0
+
+[Service]
+Type=simple
+EnvironmentFile=%h/.config/streamglass/realtime.env
+RuntimeDirectory=streamglass
+RuntimeDirectoryMode=0700
+ExecStart=/bin/bash -lc 'cd "$STREAMGLASS_PROJECT_DIR" && exec ./deploy/run_realtime_glasses.sh'
+Restart=always
+RestartSec=3
+TimeoutStopSec=20
+KillMode=control-group
+StandardOutput=append:/dev/shm/streamglass-realtime.log
+StandardError=append:/dev/shm/streamglass-realtime.log
+UMask=0077
+
+[Install]
+WantedBy=default.target

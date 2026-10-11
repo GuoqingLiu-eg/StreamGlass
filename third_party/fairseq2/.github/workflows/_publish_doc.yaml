@@ -1,0 +1,59 @@
+# Copyright (c) Meta Platforms, Inc. and affiliates.
+# All rights reserved.
+#
+# This source code is licensed under the BSD-style license found in the
+# LICENSE file in the root directory of this source tree.
+
+on:
+  workflow_call:
+
+jobs:
+  publish:
+    name: Publish
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        shell: bash
+    steps:
+      - name: Download documentation from staging
+        uses: actions/download-artifact@v3
+        with:
+          name: doc
+          path: ~/doc/
+      - name: Check-out the gh-pages branch of the repository
+        uses: actions/checkout@v3
+        with:
+          ref: gh-pages
+      - name: Set up Git
+        run: |
+          git config user.name  "github-actions"
+          git config user.email "github-actions@github.com"
+      - name: Commit and push the documentation
+        run: |
+          version=$(cat ~/doc/VERSION)
+
+          if [[ $version == *.dev* ]]; then
+            doc_dir=nightly
+          else
+            # Ignore pre-release segment for directory name.
+            mmm_version=$(echo $version | grep --only-matching --extended-regexp '^([0-9]+\.)*[0-9]+' -)
+
+            doc_dir=$mmm_version
+
+            # If we have a stable release, update the 'stable' symlink.
+            if [[ $version == $mmm_version ]]; then
+                ln --symbolic --no-target-directory --force $doc_dir stable
+            fi
+          fi
+
+          rsync --recursive --delete-after ~/doc/ $doc_dir
+
+          git add --all
+
+          # Push a commit only if there are changes in the branch.
+          if ! git diff --staged --quiet; then
+            git commit --message\
+              "Generated from $(git rev-parse --short "$GITHUB_SHA")"
+
+            git push
+          fi

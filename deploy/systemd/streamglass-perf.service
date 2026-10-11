@@ -1,0 +1,13 @@
+[Unit]
+Description=StreamGlass Jetson performance profile
+After=multi-user.target
+
+[Service]
+Type=oneshot
+ExecStart=/usr/sbin/nvpmodel -m 0
+ExecStart=/usr/bin/jetson_clocks
+RemainAfterExit=yes
+
+[Install]
+WantedBy=multi-user.target
+

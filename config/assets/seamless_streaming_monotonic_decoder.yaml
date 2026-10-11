@@ -1,0 +1,2 @@
+name: seamless_streaming_monotonic_decoder@user
+checkpoint: file:///models/seamless_streaming_monotonic_decoder.pt

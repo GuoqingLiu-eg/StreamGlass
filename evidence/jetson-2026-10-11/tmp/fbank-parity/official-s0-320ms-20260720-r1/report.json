@@ -1,0 +1,18 @@
+{
+  "component": "official_segmented_fbank_native_parity",
+  "cosine": 0.9999992847442627,
+  "finite": true,
+  "max_abs": 0.00390625,
+  "mean_abs": 0.0012163737555965781,
+  "native_shape": [
+    395,
+    80
+  ],
+  "official_padded_shape": [
+    396,
+    80
+  ],
+  "official_valid_frames": 395,
+  "p99_abs": 0.0037899112701416,
+  "schema_version": 1
+}

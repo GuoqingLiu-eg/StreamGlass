@@ -1,0 +1,149 @@
+{
+  "schema_version": 1,
+  "description": "Version reference from the source device; generate config/platform.lock.json on the target with deploy/audit_platform.py.",
+  "host": {
+    "machine": "aarch64",
+    "kernel": "6.8.12-1021-tegra"
+  },
+  "os": {
+    "BUG_REPORT_URL": "https://bugs.launchpad.net/ubuntu/",
+    "HOME_URL": "https://www.ubuntu.com/",
+    "ID": "ubuntu",
+    "ID_LIKE": "debian",
+    "LOGO": "ubuntu-logo",
+    "NAME": "Ubuntu",
+    "PRETTY_NAME": "Ubuntu 24.04.4 LTS",
+    "PRIVACY_POLICY_URL": "https://www.ubuntu.com/legal/terms-and-policies/privacy-policy",
+    "SUPPORT_URL": "https://help.ubuntu.com/",
+    "UBUNTU_CODENAME": "noble",
+    "VERSION": "24.04.4 LTS (Noble Numbat)",
+    "VERSION_CODENAME": "noble",
+    "VERSION_ID": "24.04"
+  },
+  "jetson": {
+    "default_systemd_target": "graphical.target",
+    "device_tree_model": "NVIDIA Jetson AGX Orin Developer Kit",
+    "l4t_release": "# R39 (release), REVISION: 2.0, GCID: 45755727, BOARD: generic, EABI: aarch64, DATE: Mon Jun  1 09:28:48 PM UTC 2026\n# KERNEL_VARIANT: oot\nTARGET_USERSPACE_LIB_DIR=nvidia\nTARGET_USERSPACE_LIB_DIR_PATH=usr/lib/aarch64-linux-gnu/nvidia",
+    "power_mode": "NV Power Mode: MAXN\n0"
+  },
+  "accelerators": {
+    "cuda_version": "13.2",
+    "nvcc": {
+      "command": [
+        "/usr/local/cuda/bin/nvcc",
+        "--version"
+      ],
+      "returncode": 0,
+      "stderr": "",
+      "stdout": "nvcc: NVIDIA (R) Cuda compiler driver\nCopyright (c) 2005-2026 NVIDIA Corporation\nBuilt on Thu_Mar_19_11:11:41_PM_PDT_2026\nCuda compilation tools, release 13.2, V13.2.78\nBuild cuda_13.2.r13.2/compiler.37668154_0"
+    }
+  },
+  "packages": {
+    "bluez": {
+      "installed": "true",
+      "status": "ii",
+      "version": "5.72-0ubuntu5.5"
+    },
+    "libcudnn9-cuda-13": {
+      "installed": "true",
+      "status": "ii",
+      "version": "9.20.0.46-1"
+    },
+    "libcudnn9-dev-cuda-13": {
+      "installed": "true",
+      "status": "ii",
+      "version": "9.20.0.46-1"
+    },
+    "libnvinfer-bin": {
+      "installed": "true",
+      "status": "ii",
+      "version": "10.16.2.10-1+cuda13.2"
+    },
+    "libnvinfer10": {
+      "installed": "true",
+      "status": "ii",
+      "version": "10.16.2.10-1+cuda13.2"
+    },
+    "nvidia-l4t-core": {
+      "installed": "true",
+      "status": "ii",
+      "version": "39.2.0-20260601141651"
+    },
+    "nvidia-l4t-cuda": {
+      "installed": "true",
+      "status": "ii",
+      "version": "39.2.0-20260601141651"
+    },
+    "pipewire": {
+      "installed": "true",
+      "status": "ii",
+      "version": "1.0.5-1ubuntu3.3"
+    },
+    "python3": {
+      "installed": "true",
+      "status": "ii",
+      "version": "3.12.3-0ubuntu2.1"
+    },
+    "python3-pip": {
+      "installed": "true",
+      "status": "ii",
+      "version": "24.0+dfsg-1ubuntu1.3"
+    },
+    "python3-venv": {
+      "installed": "true",
+      "status": "ii",
+      "version": "3.12.3-0ubuntu2.1"
+    },
+    "tensorrt": {
+      "installed": "true",
+      "status": "ii",
+      "version": "10.16.2.10-1+cuda13.2"
+    },
+    "wireplumber": {
+      "installed": "true",
+      "status": "ii",
+      "version": "0.4.17-1ubuntu4.1"
+    }
+  },
+  "toolchain": {
+    "cmake": {
+      "command": [
+        "cmake",
+        "--version"
+      ],
+      "returncode": 0,
+      "stderr": "",
+      "stdout": "cmake version 3.28.3\n\nCMake suite maintained and supported by Kitware (kitware.com/cmake)."
+    },
+    "compiler": {
+      "command": [
+        "c++",
+        "--version"
+      ],
+      "returncode": 0,
+      "stderr": "",
+      "stdout": "c++ (Ubuntu 13.3.0-6ubuntu2~24.04.1) 13.3.0\nCopyright (C) 2023 Free Software Foundation, Inc.\nThis is free software; see the source for copying conditions.  There is NO\nwarranty; not even for MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE."
+    },
+    "python": "3.12.3"
+  },
+  "audio": {
+    "pipewire": {
+      "command": [
+        "pw-cli",
+        "--version"
+      ],
+      "returncode": 0,
+      "stderr": "",
+      "stdout": "pw-cli\nCompiled with libpipewire 1.0.5\nLinked with libpipewire 1.0.5"
+    },
+    "wireplumber": {
+      "command": [
+        "wireplumber",
+        "--version"
+      ],
+      "returncode": 0,
+      "stderr": "",
+      "stdout": "wireplumber\nCompiled with libwireplumber 0.4.17\nLinked with libwireplumber 0.4.17"
+    }
+  }
+}

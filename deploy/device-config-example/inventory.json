@@ -1,0 +1,139 @@
+{
+  "schema_version": 1,
+  "captured_date": "2026-10-11",
+  "purpose": "Sanitized examples from backed-up installed settings; edit target-specific placeholders before installation.",
+  "default_target_user": "jetson",
+  "default_project_dir": "/home/jetson/streamglass",
+  "layout": {
+    "etc/": "System configuration at the same absolute /etc path.",
+    "home/jetson/": "User configuration under the deployment account home directory.",
+    "project/": "Configuration relative to the project checkout."
+  },
+  "placeholders": {
+    "__CONTROLLER_MAC__": "Replace with the Bluetooth controller MAC selected on the target Jetson.",
+    "__HEADSET_MAC__": "Replace with the paired headset Bluetooth MAC in colon-separated form.",
+    "__HEADSET_MAC_UNDERSCORE__": "Replace with the headset MAC using underscores as shown by PipeWire node names.",
+    "__HEADSET_ALIAS__": "Replace with the target headset Bluetooth alias.",
+    "__PLATFORM_FINGERPRINT__": "Replace with the platform fingerprint of engines rebuilt for the target Jetson; verify the full engine path exists.",
+    "__SPEAKER_NODE_NAME__": "Replace with a PipeWire output node selected on the target system before enabling optional speaker mirroring."
+  },
+  "calibration": {
+    "aec_play_delay_ms": 180,
+    "source": "project/config/pipewire/streamglass-echo-cancel.args",
+    "note": "Preserved calibration belongs to the original headset/controller/profile; recalibrate when hardware or Bluetooth profile changes.",
+    "vad": "Installed realtime.env Silero and RMS thresholds, start/preroll/silence/hard-cap settings preserved."
+  },
+  "empty_source_directories": [
+    "/home/jetson/.config/pipewire/pipewire.conf.d"
+  ],
+  "excluded_private_state": [
+    "Bluetooth pairing keys and pairing database",
+    "API tokens and credentials",
+    "Original USB speaker serial identifier"
+  ],
+  "deployment_notes": [
+    "The examples do not install or start services.",
+    "Source deployment scripts retain original device defaults. Update those defaults or use supported environment settings when deploying different hardware.",
+    "The installed user PipeWire override directory contained no files; session AEC configuration is the project-relative args file included here.",
+    "The performance service preserves the captured nvpmodel mode 0 and jetson_clocks commands; select a compatible power mode for the target board before enabling it.",
+    "The web service preserves binding to all interfaces on port 8080."
+  ],
+  "files": [
+    {
+      "source_path": "/etc/bluetooth/main.conf",
+      "example_path": "etc/bluetooth/main.conf",
+      "placeholders": [],
+      "sha256": "9f2db017bcafe3dfcfef84a03a2945268f7079d652059770d9d6710028579d18"
+    },
+    {
+      "source_path": "/etc/streamglass/bluetooth.env",
+      "example_path": "etc/streamglass/bluetooth.env",
+      "placeholders": [
+        "__CONTROLLER_MAC__",
+        "__HEADSET_MAC__"
+      ],
+      "sha256": "2398e3d39c4f06455d4f48471d866ccd7e29d5892d4e1d19544b507bb712ef8a"
+    },
+    {
+      "source_path": "/etc/streamglass/bootstrap.env",
+      "example_path": "etc/streamglass/bootstrap.env",
+      "placeholders": [
+        "/home/jetson/streamglass"
+      ],
+      "sha256": "c645a20beb24ef2398b666cd3655f2517d28c4b86b4801e0713c5137d0b3d72d"
+    },
+    {
+      "source_path": "/etc/systemd/system/bluetooth.service.d/streamglass-a2dp.conf",
+      "example_path": "etc/systemd/system/bluetooth.service.d/streamglass-a2dp.conf",
+      "placeholders": [],
+      "sha256": "25aced6e635e403a52d4cb8c68f891c073d8204ab47f06f2a6e0eb1c5298a5a7"
+    },
+    {
+      "source_path": "/etc/systemd/system/streamglass-bluetooth.service",
+      "example_path": "etc/systemd/system/streamglass-bluetooth.service",
+      "placeholders": [],
+      "sha256": "c774fe5f0a4926af38ae23ee3cac4c474fcdd868687fe4d23ea0be0379367ddf"
+    },
+    {
+      "source_path": "/etc/systemd/system/streamglass-perf.service",
+      "example_path": "etc/systemd/system/streamglass-perf.service",
+      "placeholders": [],
+      "sha256": "fc726fa87e94291cbd0245d0d21a4d7f7bb97def69a379b76deac4580a3b1c7a"
+    },
+    {
+      "source_path": "/home/jetson/.config/streamglass/playback.json",
+      "example_path": "home/jetson/.config/streamglass/playback.json",
+      "placeholders": [
+        "__SPEAKER_NODE_NAME__"
+      ],
+      "sha256": "cc3d16bef71df45830d454fdcd8e36af1a7bdae70cc961d07b51a7e748b53b03",
+      "changes": [
+        "Speaker mirroring disabled until a valid local PipeWire output node is selected."
+      ]
+    },
+    {
+      "source_path": "/home/jetson/.config/streamglass/realtime.env",
+      "example_path": "home/jetson/.config/streamglass/realtime.env",
+      "placeholders": [
+        "__HEADSET_ALIAS__",
+        "/home/jetson/streamglass",
+        "__PLATFORM_FINGERPRINT__"
+      ],
+      "sha256": "436d8afeadeb868b322dff2cdf831d2e0f9cb072fcc5700cd8e070b5082f1819"
+    },
+    {
+      "source_path": "/home/jetson/.config/systemd/user/streamglass-realtime.service",
+      "example_path": "home/jetson/.config/systemd/user/streamglass-realtime.service",
+      "placeholders": [],
+      "sha256": "03bbe6215b4f619607c09fbe802631f82a833a3c16d4b53e5b5b65b59b36dffd"
+    },
+    {
+      "source_path": "/home/jetson/.config/systemd/user/streamglass-web.service",
+      "example_path": "home/jetson/.config/systemd/user/streamglass-web.service",
+      "placeholders": [],
+      "sha256": "e368a232fbd078ebe2f7e81f68cc9c9805871daea9caa284c3efed51925290ec",
+      "changes": [
+        "Removed the original USB gadget address from the comment; bind setting remains 0.0.0.0."
+      ]
+    },
+    {
+      "source_path": "/home/jetson/.config/wireplumber/bluetooth.lua.d/51-streamglass-bluez.lua",
+      "example_path": "home/jetson/.config/wireplumber/bluetooth.lua.d/51-streamglass-bluez.lua",
+      "placeholders": [],
+      "sha256": "9f39bc5131224727250c79a2e914ae6b6c98593a715e60a0555b1de8d649c422"
+    },
+    {
+      "source_path": "project:config/pipewire/streamglass-echo-cancel.args",
+      "example_path": "project/config/pipewire/streamglass-echo-cancel.args",
+      "placeholders": [
+        "__HEADSET_MAC_UNDERSCORE__"
+      ],
+      "sha256": "f9ba680395f5c0002dc330a2c57a36d8ffdb9c88d4534f93e861d4449a62002c",
+      "preserved_calibration": {
+        "buffer.play_delay": "180/1000",
+        "audio.rate": 16000,
+        "audio.channels": 1
+      }
+    }
+  ]
+}

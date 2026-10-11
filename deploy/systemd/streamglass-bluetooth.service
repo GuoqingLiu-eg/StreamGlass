@@ -1,0 +1,18 @@
+[Unit]
+Description=StreamGlass BARROT headless Bluetooth audio
+After=bluetooth.service systemd-user-sessions.service
+Wants=bluetooth.service
+StartLimitIntervalSec=0
+
+[Service]
+Type=simple
+EnvironmentFile=/etc/streamglass/bootstrap.env
+Environment=STREAMGLASS_BT_MONITOR=1
+ExecStart=/bin/bash -lc 'exec "$STREAMGLASS_PROJECT_DIR/deploy/connect_barrot_glasses.sh"'
+Restart=on-failure
+RestartSec=15
+TimeoutStopSec=20
+KillMode=control-group
+
+[Install]
+WantedBy=multi-user.target

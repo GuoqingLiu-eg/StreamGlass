@@ -1,0 +1,47 @@
+schema_version: 1
+
+runtime:
+  mode: reference
+  source_language: auto
+  target_language: eng
+  chunk_ms: 320
+  max_utterance_ms: 20000
+  target_token_limit: 512
+
+audio:
+  input:
+    kind: webrtc_datachannel
+    sample_rate_hz: 16000
+    channels: 1
+    frame_ms: 40
+  output:
+    kind: pipewire
+    node_name: ""
+    jitter_buffer_ms: 120
+    jitter_buffer_min_ms: 80
+    jitter_buffer_max_ms: 250
+    crossfade_ms: 12
+
+vad:
+  decision_threshold: 0.5
+  silence_limit_ms: 700
+  soft_limit_ms: 12000
+
+scheduler:
+  inference_deadline_ms: 240
+  cycle_deadline_ms: 320
+  critical_path_p95_ms: 280
+  overload_drop_policy: none
+
+cuda:
+  precision: fp16
+  keep_layer_norm_fp32: true
+  keep_softmax_fp32: true
+  use_cuda_graph: true
+  pinned_host_buffers: true
+  preallocated_device_pool: true
+
+privacy:
+  persist_audio: false
+  persist_plaintext_translation: false
+

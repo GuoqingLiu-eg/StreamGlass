@@ -1,0 +1,49 @@
+{
+  audio.rate = 16000
+  audio.channels = 1
+  audio.position = [ MONO ]
+  buffer.play_delay = 180/1000
+  library.name = aec/libspa-aec-webrtc
+  aec.args = {
+    webrtc.delay_agnostic = true
+    webrtc.extended_filter = true
+    webrtc.high_pass_filter = true
+    webrtc.noise_suppression = true
+    webrtc.voice_detection = false
+    webrtc.gain_control = false
+  }
+  capture.props = {
+    node.name = streamglass_aec_capture
+    target.object = bluez_input.41_42_84_69_36_F8.0
+    node.autoconnect = true
+    node.dont-reconnect = false
+    node.dont-fallback = true
+    node.pause-on-idle = false
+    node.always-process = true
+    session.suspend-timeout-seconds = 0
+    stream.dont-remix = true
+  }
+  source.props = {
+    node.name = streamglass_aec_source
+    node.description = "StreamGlass AEC Source"
+    node.pause-on-idle = false
+    session.suspend-timeout-seconds = 0
+  }
+  sink.props = {
+    node.name = streamglass_aec_sink
+    node.description = "StreamGlass AEC Sink"
+    node.pause-on-idle = false
+    session.suspend-timeout-seconds = 0
+  }
+  playback.props = {
+    node.name = streamglass_aec_playback
+    target.object = bluez_output.41_42_84_69_36_F8.1
+    node.autoconnect = true
+    node.dont-reconnect = false
+    node.dont-fallback = true
+    node.pause-on-idle = false
+    node.always-process = true
+    session.suspend-timeout-seconds = 0
+    stream.dont-remix = true
+  }
+}

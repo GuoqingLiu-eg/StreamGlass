@@ -1,0 +1,191 @@
+{
+  "graphs": {
+    "prefill": {
+      "errors": [],
+      "file": "/opt/streamglass/onnx/s0/decoder/exports/official-s0-320ms-20260720-r4-pchoose-fp32/prefill/decoder_prefill.onnx",
+      "inputs": [
+        {
+          "dtype": "DataType.INT64",
+          "name": "target_input",
+          "shape": [
+            1,
+            -1
+          ]
+        },
+        {
+          "dtype": "DataType.HALF",
+          "name": "encoder_output",
+          "shape": [
+            1,
+            -1,
+            1024
+          ]
+        },
+        {
+          "dtype": "DataType.HALF",
+          "name": "causal_mask",
+          "shape": [
+            -1,
+            -1
+          ]
+        }
+      ],
+      "network_layers": 19207,
+      "outputs": [
+        {
+          "dtype": "DataType.HALF",
+          "name": "decoder_output",
+          "shape": [
+            1,
+            -1,
+            1024
+          ]
+        },
+        {
+          "dtype": "DataType.HALF",
+          "name": "logits",
+          "shape": [
+            1,
+            256102
+          ]
+        },
+        {
+          "dtype": "DataType.HALF",
+          "name": "decision_values",
+          "shape": [
+            -1
+          ]
+        },
+        {
+          "dtype": "DataType.HALF",
+          "name": "self_k_cache_out",
+          "shape": [
+            24,
+            1,
+            16,
+            -1,
+            64
+          ]
+        },
+        {
+          "dtype": "DataType.HALF",
+          "name": "self_v_cache_out",
+          "shape": [
+            24,
+            1,
+            16,
+            -1,
+            64
+          ]
+        }
+      ],
+      "parsed": true
+    },
+    "step": {
+      "errors": [],
+      "file": "/opt/streamglass/onnx/s0/decoder/exports/official-s0-320ms-20260720-r4-pchoose-fp32/step/decoder_step.onnx",
+      "inputs": [
+        {
+          "dtype": "DataType.INT64",
+          "name": "target_input",
+          "shape": [
+            1,
+            1
+          ]
+        },
+        {
+          "dtype": "DataType.HALF",
+          "name": "encoder_output",
+          "shape": [
+            1,
+            -1,
+            1024
+          ]
+        },
+        {
+          "dtype": "DataType.INT64",
+          "name": "position",
+          "shape": [
+            1
+          ]
+        },
+        {
+          "dtype": "DataType.HALF",
+          "name": "self_k_cache",
+          "shape": [
+            24,
+            1,
+            16,
+            -1,
+            64
+          ]
+        },
+        {
+          "dtype": "DataType.HALF",
+          "name": "self_v_cache",
+          "shape": [
+            24,
+            1,
+            16,
+            -1,
+            64
+          ]
+        }
+      ],
+      "network_layers": 19180,
+      "outputs": [
+        {
+          "dtype": "DataType.HALF",
+          "name": "decoder_output",
+          "shape": [
+            1,
+            1,
+            1024
+          ]
+        },
+        {
+          "dtype": "DataType.HALF",
+          "name": "logits",
+          "shape": [
+            1,
+            256102
+          ]
+        },
+        {
+          "dtype": "DataType.HALF",
+          "name": "decision_values",
+          "shape": [
+            -1
+          ]
+        },
+        {
+          "dtype": "DataType.HALF",
+          "name": "self_k_cache_out",
+          "shape": [
+            24,
+            1,
+            16,
+            -1,
+            64
+          ]
+        },
+        {
+          "dtype": "DataType.HALF",
+          "name": "self_v_cache_out",
+          "shape": [
+            24,
+            1,
+            16,
+            -1,
+            64
+          ]
+        }
+      ],
+      "parsed": true
+    }
+  },
+  "manifest": "/opt/streamglass/onnx/s0/decoder/exports/official-s0-320ms-20260720-r4-pchoose-fp32/export_manifest.json",
+  "passed": true,
+  "schema_version": 1,
+  "tensorrt_version": "10.16.2.10"
+}

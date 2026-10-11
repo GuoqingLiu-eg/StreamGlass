@@ -1,0 +1,33 @@
+{
+  "chunk_samples": 512,
+  "context_samples": 64,
+  "fixture": {
+    "audio_path": "/fixture.wav",
+    "audio_sha256": "54700c594c088f7adeaf8772a0bb437348bb784449d49ff8d4c5c399882187ef",
+    "chunk_count": 124,
+    "fixture_path": "/report-output/silero_vad_reference.fixture",
+    "fixture_sha256": "29af3e52a9659a646d7bea2cada905e48de3ea446c3bfb69d5ea686791e42f94",
+    "probability_max": 0.9999973773956299,
+    "probability_min": 0.03852938860654831,
+    "sample_count": 63488
+  },
+  "input_shape": [
+    1,
+    576
+  ],
+  "jit_sha256": "e1122837f4154c511485fe0b9c64455f7b929c96fbb8d79fbdb336383ebd3720",
+  "onnx_path": "/onnx-output/silero_vad_16k_static.onnx",
+  "onnx_sha256": "421f2e09824b861165aec5ed82e6389f5a357896a46b80f8e8897d8d543d0ec7",
+  "opset": 17,
+  "sample_rate": 16000,
+  "schema_version": 1,
+  "source": "snakers4/silero-vad",
+  "source_tag": "v6.2.1",
+  "state_shape": [
+    2,
+    1,
+    128
+  ],
+  "torch_version": "2.2.0a0+81ea7a4",
+  "zero_input_probability": 0.001669840537942946
+}

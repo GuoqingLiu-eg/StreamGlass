@@ -1,0 +1,199 @@
+{
+  "cases": [
+    {
+      "encoder_output": {
+        "cosine": 0.9999972363410649,
+        "finite": true,
+        "max_abs": 0.078125,
+        "mean_abs": 0.0015993869164958596,
+        "shape": [
+          1,
+          14,
+          1024
+        ]
+      },
+      "encoder_seq_lens": {
+        "candidate": [
+          14
+        ],
+        "equal": true,
+        "reference": [
+          14
+        ],
+        "shape_equal": true
+      },
+      "fbank_length": 222,
+      "passed": true,
+      "reference": "call_0000.npz",
+      "valid_fbank_length": 222
+    },
+    {
+      "encoder_output": {
+        "cosine": 0.9999949226526577,
+        "finite": true,
+        "max_abs": 0.265625,
+        "mean_abs": 0.0012337573571130633,
+        "shape": [
+          1,
+          16,
+          1024
+        ]
+      },
+      "encoder_seq_lens": {
+        "candidate": [
+          16
+        ],
+        "equal": true,
+        "reference": [
+          16
+        ],
+        "shape_equal": true
+      },
+      "fbank_length": 254,
+      "passed": true,
+      "reference": "call_0001.npz",
+      "valid_fbank_length": 254
+    },
+    {
+      "encoder_output": {
+        "cosine": 0.9999944114793373,
+        "finite": true,
+        "max_abs": 0.1875,
+        "mean_abs": 0.0011841923696920276,
+        "shape": [
+          1,
+          18,
+          1024
+        ]
+      },
+      "encoder_seq_lens": {
+        "candidate": [
+          18
+        ],
+        "equal": true,
+        "reference": [
+          18
+        ],
+        "shape_equal": true
+      },
+      "fbank_length": 286,
+      "passed": true,
+      "reference": "call_0002.npz",
+      "valid_fbank_length": 286
+    },
+    {
+      "encoder_output": {
+        "cosine": 0.9999986459800793,
+        "finite": true,
+        "max_abs": 0.09375,
+        "mean_abs": 0.0011575792450457811,
+        "shape": [
+          1,
+          20,
+          1024
+        ]
+      },
+      "encoder_seq_lens": {
+        "candidate": [
+          20
+        ],
+        "equal": true,
+        "reference": [
+          20
+        ],
+        "shape_equal": true
+      },
+      "fbank_length": 318,
+      "passed": true,
+      "reference": "call_0003.npz",
+      "valid_fbank_length": 318
+    },
+    {
+      "encoder_output": {
+        "cosine": 0.9999820632991449,
+        "finite": true,
+        "max_abs": 0.236328125,
+        "mean_abs": 0.002255247673019767,
+        "shape": [
+          1,
+          22,
+          1024
+        ]
+      },
+      "encoder_seq_lens": {
+        "candidate": [
+          22
+        ],
+        "equal": true,
+        "reference": [
+          22
+        ],
+        "shape_equal": true
+      },
+      "fbank_length": 350,
+      "passed": true,
+      "reference": "call_0004.npz",
+      "valid_fbank_length": 350
+    },
+    {
+      "encoder_output": {
+        "cosine": 0.9999973401260603,
+        "finite": true,
+        "max_abs": 0.10693359375,
+        "mean_abs": 0.001582677592523396,
+        "shape": [
+          1,
+          24,
+          1024
+        ]
+      },
+      "encoder_seq_lens": {
+        "candidate": [
+          24
+        ],
+        "equal": true,
+        "reference": [
+          24
+        ],
+        "shape_equal": true
+      },
+      "fbank_length": 382,
+      "passed": true,
+      "reference": "call_0005.npz",
+      "valid_fbank_length": 382
+    },
+    {
+      "encoder_output": {
+        "cosine": 0.9999953572826361,
+        "finite": true,
+        "max_abs": 0.109375,
+        "mean_abs": 0.0019434090936556458,
+        "shape": [
+          1,
+          25,
+          1024
+        ]
+      },
+      "encoder_seq_lens": {
+        "candidate": [
+          25
+        ],
+        "equal": true,
+        "reference": [
+          25
+        ],
+        "shape_equal": true
+      },
+      "fbank_length": 396,
+      "passed": true,
+      "reference": "call_0006.npz",
+      "valid_fbank_length": 395
+    }
+  ],
+  "engine": "/opt/streamglass/engine-cache/87d587047967766c63f3de7012a479fbd4f3c471ffea70efe8454017bf908709/encoder_cumulative_fp16.engine",
+  "engine_sha256": "1761c8d4a5af3151212ce7c8ebfc9364af807097c5e41658f3de3ea255696c89",
+  "generated_at": "2026-07-20T15:19:57.746475+00:00",
+  "minimum_cosine": 0.999,
+  "passed": true,
+  "schema_version": 1
+}

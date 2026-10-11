@@ -1,0 +1,17 @@
+{
+  "schema_version": 1,
+  "component": "silero_vad_v6.2.1_tensorrt_experiment",
+  "chunks": 124,
+  "repetitions": 100,
+  "classification_mismatches": 0,
+  "max_abs": 0.0002282857895,
+  "mean_abs": 5.797086464e-05,
+  "load_ms": 85.077027,
+  "latency_mean_ms": 0.1183398264,
+  "latency_p50_ms": 0.117825,
+  "latency_p95_ms": 0.122081,
+  "latency_p99_ms": 0.13373,
+  "latency_max_ms": 0.160321,
+  "finite": true,
+  "passed": true
+}
